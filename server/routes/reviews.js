@@ -21,19 +21,10 @@ const upload = multer({
 router.get('/', async (req, res) => {
   try {
     const reviews = await getReviews();
-
-    res.json({
-      success: true,
-      reviews,
-    });
+    res.json({ success: true, reviews });
   } catch (error) {
-    // 🔴 Detailed database error for Render logs
-    console.error('❌ REVIEWS DB ERROR:', error);
-
-    res.status(500).json({
-      success: false,
-      message: 'Failed to fetch reviews',
-    });
+    console.error(error);
+    res.status(500).json({ success: false, message: 'Failed to fetch reviews' });
   }
 });
 
@@ -67,14 +58,10 @@ router.post('/', upload.single('photo'), async (req, res) => {
             resource_type: 'image',
           },
           (error, result) => {
-            if (error) {
-              reject(error);
-            } else {
-              resolve(result);
-            }
+            if (error) reject(error);
+            else resolve(result);
           }
         );
-
         stream.end(req.file.buffer);
       });
 
@@ -102,8 +89,7 @@ router.post('/', upload.single('photo'), async (req, res) => {
       },
     });
   } catch (error) {
-    console.error('❌ Review submission error:', error);
-
+    console.error('Review submission error:', error);
     res.status(500).json({
       success: false,
       message: 'Failed to submit review',

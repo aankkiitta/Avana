@@ -12,8 +12,18 @@ const pool = mysql.createPool({
   waitForConnections: true,
   connectionLimit: 10,
   ssl: {
-    rejectUnauthorized: false
-  }
+    rejectUnauthorized: false,
+  },
 });
+
+// Test Database Connection
+pool.getConnection()
+  .then((connection) => {
+    console.log('✅ DATABASE CONNECTED SUCCESSFULLY');
+    connection.release();
+  })
+  .catch((error) => {
+    console.error('❌ DATABASE CONNECTION FAILED:', error.message);
+  });
 
 export default pool;
