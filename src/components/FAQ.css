@@ -1,0 +1,311 @@
+/* =========================================
+   GOOGLE FONTS
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* =========================================
+   FAQ SECTION
+   ========================================= */
+.faq {
+  padding: 100px 60px;
+  background-color: #f5f3ef;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* =========================================
+   LEFT: FAQ Heading + Subtitle
+   ========================================= */
+.faq-left {
+  position: sticky;
+  top: 120px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out,
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-visible .faq-left {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-heading {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #1c2b4a;
+  margin: 0 0 20px;
+}
+
+.faq-subtitle {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #666;
+  margin: 0;
+  max-width: 320px;
+}
+
+.faq-link {
+  color: #1c2b4a;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1.5px solid #d4ed4a;
+  transition: all 0.3s ease;
+}
+
+.faq-link:hover {
+  color: #9ab829;
+  border-bottom-color: #9ab829;
+}
+
+/* =========================================
+   RIGHT: Card (Cream — same as website)
+   ========================================= */
+.faq-right {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out 0.2s,
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+
+.faq-visible .faq-right {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-card {
+  background-color: #faf8f4;                  /* 🔥 Same as Services cards */
+  border: 1.5px solid rgba(28, 43, 74, 0.06); /* 🔥 Subtle border */
+  border-radius: 20px;
+  padding: 8px 0;
+  overflow: hidden;
+}
+
+/* =========================================
+   FAQ ITEM
+   ========================================= */
+.faq-item {
+  border-bottom: 1px solid rgba(28, 43, 74, 0.08);  /* 🔥 Navy tinted line */
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item.active {
+  background-color: #ffffff;                  /* 🔥 White on active */
+}
+
+/* =========================================
+   QUESTION BUTTON
+   ========================================= */
+.faq-question {
+  width: 100%;
+  padding: 24px 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  transition: padding 0.3s ease;
+}
+
+.faq-question-text {
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: #1c2b4a;                             /* 🔥 Navy text */
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  flex: 1;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover .faq-question-text {
+  color: #9ab829;                             /* 🔥 Lime on hover */
+}
+
+.faq-item.active .faq-question-text {
+  color: #1c2b4a;
+  font-weight: 600;
+}
+
+/* =========================================
+   CHEVRON ICON
+   ========================================= */
+.faq-chevron {
+  width: 24px;
+  height: 24px;
+  color: #1c2b4a;                             /* 🔥 Navy icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-chevron svg {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item.active .faq-chevron {
+  color: #9ab829;                             /* 🔥 Lime on active */
+}
+
+.faq-item.active .faq-chevron svg {
+  transform: rotate(180deg);
+}
+
+/* =========================================
+   ANSWER (Smooth expand)
+   ========================================= */
+.faq-answer-wrap {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item.active .faq-answer-wrap {
+  max-height: 300px;
+}
+
+.faq-answer {
+  padding: 0 32px 24px;
+}
+
+.faq-answer p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #666;                                /* 🔥 Muted grey */
+  margin: 0;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.4s ease 0.1s,
+              transform 0.4s ease 0.1s;
+}
+
+.faq-item.active .faq-answer p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   RESPONSIVE - TABLET
+   ========================================= */
+@media (max-width: 1024px) {
+  .faq { padding: 80px 40px; }
+  .faq-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .faq-left {
+    position: static;
+    text-align: left;
+  }
+  .faq-heading {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+  .faq-subtitle {
+    max-width: 100%;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - MOBILE
+   ========================================= */
+@media (max-width: 768px) {
+  .faq { padding: 60px 22px; }
+  .faq-container { gap: 30px; }
+
+  .faq-heading {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+    margin-bottom: 14px;
+  }
+  .faq-subtitle { font-size: 0.9rem; }
+
+  .faq-card {
+    border-radius: 16px;
+  }
+
+  .faq-question {
+    padding: 20px 22px;
+    gap: 14px;
+  }
+
+  .faq-question-text {
+    font-size: 0.95rem;
+  }
+
+  .faq-chevron {
+    width: 20px;
+    height: 20px;
+  }
+
+  .faq-chevron svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .faq-answer {
+    padding: 0 22px 20px;
+  }
+
+  .faq-answer p {
+    font-size: 0.86rem;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 400px) {
+  .faq { padding: 50px 18px; }
+  .faq-heading { font-size: clamp(2rem, 10vw, 2.5rem); }
+
+  .faq-question {
+    padding: 18px 18px;
+  }
+
+  .faq-question-text {
+    font-size: 0.88rem;
+  }
+
+  .faq-answer {
+    padding: 0 18px 18px;
+  }
+
+  .faq-answer p {
+    font-size: 0.82rem;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+  .faq-left,
+  .faq-right,
+  .faq-chevron,
+  .faq-chevron svg,
+  .faq-answer-wrap,
+  .faq-answer p,
+  .faq-question-text {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
