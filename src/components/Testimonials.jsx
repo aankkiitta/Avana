@@ -29,7 +29,7 @@ const Testimonials = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-       const response = await fetch('https://avana-e890.onrender.com/api/reviews');
+      const response = await fetch('https://avana-gogk.onrender.com/api/reviews');
         const data = await response.json();
 
         if (data.success) {
@@ -157,7 +157,7 @@ const Testimonials = () => {
       data.append('rating', formData.rating);
 
       if (photo) data.append('photo', photo);
-const response = await fetch('https://avana-e890.onrender.com/api/reviews', {
+const response = await fetch('https://avana-gogk.onrender.com/api/reviews', {
         method: 'POST',
         body: data,
       });
