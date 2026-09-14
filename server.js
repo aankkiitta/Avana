@@ -5,7 +5,7 @@ import fs from 'fs';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 
-import reviewRoutes from './server/routes/reviews.js';
+import * as reviewModule from './server/routes/reviews.js';
 
 dotenv.config();
 
@@ -20,6 +20,11 @@ app.use(express.json());
 // ===============================
 // REVIEWS API
 // ===============================
+const reviewRoutes = reviewModule.default;
+
+console.log('🔍 Review router type:', typeof reviewRoutes);
+console.log('🔍 Review router:', reviewRoutes);
+
 app.use('/api/reviews', reviewRoutes);
 
 // ===============================
