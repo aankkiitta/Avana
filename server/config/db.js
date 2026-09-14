@@ -18,12 +18,33 @@ const pool = mysql.createPool({
 
 // Test Database Connection
 pool.getConnection()
-  .then((connection) => {
+  .then(async (connection) => {
     console.log('✅ DATABASE CONNECTED SUCCESSFULLY');
+
+    // Check which database Render is actually using
+    const [dbInfo] = await connection.query(
+      'SELECT DATABASE() AS database_name'
+    );
+
+    console.log(
+      '📌 DATABASE BEING USED:',
+      dbInfo[0].database_name
+    );
+
+    // Check reviews table columns
+    const [columns] = await connection.query(
+      'DESCRIBE reviews'
+    );
+
+    console.log(
+      '📋 REVIEWS TABLE COLUMNS:',
+      columns.map((column) => column.Field)
+    );
+
     connection.release();
   })
   .catch((error) => {
-    console.error('❌ DATABASE CONNECTION FAILED:', error.message);
+    console.error('❌ DATABASE CHECK ERROR:', error);
   });
 
 export default pool;
