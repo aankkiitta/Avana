@@ -17,8 +17,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Reviews API
 app.use('/api/reviews', reviewRoutes);
 
+// Frontend
 const frontendPath = path.join(__dirname, 'dist');
 
 console.log('📁 Frontend path:', frontendPath);
@@ -26,6 +28,7 @@ console.log('✅ Frontend exists:', fs.existsSync(frontendPath));
 
 app.use(express.static(frontendPath));
 
+// API Test
 app.get('/api/test', (req, res) => {
   res.json({
     success: true,
@@ -33,6 +36,7 @@ app.get('/api/test', (req, res) => {
   });
 });
 
+// React
 app.get('*', (req, res) => {
   const indexPath = path.join(frontendPath, 'index.html');
 
