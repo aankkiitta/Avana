@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './AboutUs.css';
+import aboutBg from '../image/aboutus.png';
 
 const AboutUs = () => {
   const sectionRef = useRef(null);
@@ -10,112 +11,93 @@ const AboutUs = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('about-visible');
-            observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.15 }
     );
 
-    const section = sectionRef.current;
-    if (section) observer.observe(section);
+    const items = sectionRef.current?.querySelectorAll(
+      '.about-top, .about-intro, .about-quote, .about-offer'
+    );
+
+    items?.forEach((el) => observer.observe(el));
 
     return () => {
-      if (section) observer.unobserve(section);
+      items?.forEach((el) => observer.unobserve(el));
     };
   }, []);
 
   return (
-    <section className="about" ref={sectionRef}>
+    <section
+      className="about"
+      ref={sectionRef}
+      style={{ backgroundImage: `url(${aboutBg})` }}
+    >
+      <div className="about-overlay" />
 
-      {/* Top: Tag + Big Heading */}
-      <div className="about-top">
+      <div className="about-inner">
 
-        <div className="about-tag-wrap">
-          <span className="about-tag-line"></span>
-          <p className="about-tag">About Us</p>
+        {/* ============ TOP ============ */}
+        <div className="about-top">
+          <div className="about-tag-wrap">
+           
+            <p className="about-tag">Welcome to AVANA</p>
+          </div>
+
+          <h2 className="about-heading">
+            A freelance studio built for<br />
+            <em>modern</em>, <em>responsive</em> &amp; <em>custom</em> websites
+          </h2>
         </div>
 
-        <h2 className="about-heading">
+        {/* ============ INTRO ============ */}
+        <div className="about-intro">
+          <p className="about-intro-text">
+            <strong>AVANA</strong> is a freelance web design and development
+            studio focused on creating modern, responsive, and customized
+            digital solutions for businesses, startups, and individuals. We
+            believe a website should not just look good — it should represent
+            your brand, connect with your audience, and support your goals.
+          </p>
+        </div>
 
-          <span className="line-mask">
-            <span className="line-content">
-              We're a small team of
-            </span>
-          </span>
+        {/* ============ QUOTE + OFFER ============ */}
+        <div className="about-split">
 
-          <br className="about-br" />
+          {/* LEFT: Quote with yellow brush */}
+          <div className="about-quote">
+            <div className="quote-brush">
+              <span className="quote-mark quote-mark-open">&ldquo;</span>
 
-          <span className="line-mask">
-            <span className="line-content line-delay-1">
-              <em>designers</em>,
-            </span>
-          </span>{' '}
+              <p className="quote-text">
+                From a blank screen.<br />
+                To something worth seeing.
+              </p>
 
-          <span className="line-mask">
-            <span className="line-content line-delay-2">
-              <em>developers</em>
-            </span>
-          </span>{' '}
+              <span className="quote-mark quote-mark-close">&rdquo;</span>
+            </div>
+          </div>
 
-          <span className="line-mask">
-            <span className="line-content line-delay-3">
-              &amp; <em>problem solvers</em>
-            </span>
-          </span>
+          {/* RIGHT: AVANA Offers */}
+          <div className="about-offer">
+            <p className="offer-text">
+              <strong>AVANA</strong> offers a range of online solutions, such
+              as website design &amp; development, digital marketing, and Web
+              app development — realizing that the needs of every business
+              are distinct and varied. Our goal is to offer our consumers
+              high-quality services. We ensure that our customers obtain the
+              greatest services possible.
+            </p>
 
-        </h2>
-      </div>
+            <a href="#contact" className="offer-link">
+              Contact us <span className="offer-arrow">→</span>
+            </a>
+          </div>
 
-
-      {/* Middle: Intro */}
-      <div className="about-intro">
-
-        <p className="about-intro-text">
-          We are freelance web developers who build
-          <strong> websites and web applications</strong> for
-          businesses, startups and individuals. We focus on
-          understanding what you need and turning your idea into
-          something that actually works.
-        </p>
-
-      </div>
-
-
-      {/* Bottom: 2x2 Grid */}
-      <div className="about-grid">
-
-        <p className="about-para">
-          We started with a simple idea — build websites that
-          look good, work smoothly and actually help our clients.
-          Instead of using the same template for everyone, we
-          create each project according to the client's
-          requirements.
-        </p>
-
-        <p className="about-para">
-          From business websites and portfolios to e-commerce
-          stores and custom web applications, we work on different
-          types of projects. We choose the right technologies
-          based on what the project actually needs.
-        </p>
-
-        <p className="about-para">
-          As a small team, we work closely with our clients
-          throughout the project. From the first discussion and
-          design to development and launch, we keep things simple,
-          clear and easy to understand.
-        </p>
-
-        <p className="about-para">
-          Every project is different, and that's what we enjoy
-          about our work. Whether you already have a complete idea
-          or just know what you want to achieve, we're here to
-          help turn it into a working website or web application.
-        </p>
+        </div>
 
       </div>
-
     </section>
   );
 };

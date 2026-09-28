@@ -1,0 +1,223 @@
+/* =========================================
+   GOOGLE FONTS
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+/* =========================================
+   SECTION
+   ========================================= */
+.vmg {
+  position: relative;
+  background: #14171c;              
+  padding: 60px 40px 60px;         
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.vmg-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  align-items: start;
+}
+
+/* =========================================
+   CARD
+   ========================================= */
+.vmg-card {
+  position: sticky;
+  top: 80px;                       
+  background: transparent;
+  padding: 10px 0;                 
+  transition: transform 0.15s linear, opacity 0.15s linear;
+  will-change: transform, opacity;
+}
+
+/* Icon */
+.vmg-icon {
+  width: 160px;
+  height: 120px;
+  margin-bottom: 20px;             
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.vmg-svg {
+  width: 130px;
+  height: auto;
+  filter: drop-shadow(0 12px 30px rgba(74, 99, 224, 0.25));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vmg-card:hover .vmg-svg {
+  transform: translateY(-6px);
+}
+
+/* Title */
+.vmg-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 14px 0;              
+  letter-spacing: -0.01em;
+}
+
+/* Underline */
+.vmg-title::after {
+  content: '';
+  display: block;
+  width: 45px;
+  height: 2px;
+  background: #ffffff;
+  margin-top: 10px;                
+  opacity: 0.85;
+}
+
+/* Body */
+.vmg-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.72);
+  letter-spacing: -0.005em;
+}
+
+.vmg-body p {
+  margin: 0;
+}
+
+/* Goals list */
+.vmg-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vmg-body ul li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.6;
+}
+
+.vmg-body ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f4c542;
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+@media (max-width: 1024px) {
+  .vmg { padding: 50px 30px 50px; } 
+
+  .vmg-inner {
+    gap: 40px;
+  }
+
+  .vmg-icon {
+    width: 120px;
+    height: 100px;
+    margin-bottom: 18px;
+  }
+
+  .vmg-svg {
+    width: 105px;
+  }
+
+  .vmg-card {
+    top: 70px;                     
+  }
+}
+
+/* =========================================
+   MOBILE — stack normally, no overlap
+   ========================================= */
+@media (max-width: 768px) {
+  .vmg {
+    padding: 40px 20px 40px;       
+  }
+
+  .vmg-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;                     
+  }
+
+  .vmg-card {
+    position: relative;   
+    top: auto;
+    transform: none !important;
+    opacity: 1 !important;
+    /* 🔥 ADDED: Mobile par sara text center karne ke liye */
+    text-align: center; 
+  }
+
+  .vmg-icon {
+    width: 100px;
+    height: 80px;
+    /* 🔥 CHANGED: Icon ko center karne ke liye */
+    margin: 0 auto 16px auto; 
+    justify-content: center;
+  }
+
+  .vmg-svg {
+    width: 90px;
+  }
+
+  .vmg-title {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+
+  .vmg-title::after {
+    margin-top: 10px;
+    width: 40px;
+    /* 🔥 CHANGED: Underline ko center karne ke liye */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .vmg-body {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  /* 🔥 ADDED: List ko center mein lane ke liye, par text left-aligned rahe */
+  .vmg-body ul {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+
+  .vmg-body ul li {
+    font-size: 0.88rem;
+  }
+}
+
+/* =========================================
+   EXTRA SMALL
+   ========================================= */
+@media (max-width: 400px) {
+  .vmg { padding: 30px 16px 30px; } 
+
+  .vmg-title { font-size: 1.15rem; }
+
+  .vmg-body { font-size: 0.88rem; }
+  .vmg-body ul li { font-size: 0.85rem; }
+}

@@ -1,0 +1,359 @@
+/* ============ VARS ============ */
+:root {
+
+    --card-blue: #1e3a5f;
+--accent-orange: #d4ff3a;
+--heading: #1e3a5f;
+  
+  --check-green: #6ee7a8;
+  --text-white: #ffffff;
+  --text-light: rgba(255, 255, 255, 0.95);
+  --text-dim: rgba(255, 255, 255, 0.55);
+ 
+  --highlight-lime: #d4e84a;
+}
+
+/* ============ SECTION ============ */
+.pricing-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ============ HEADER ============ */
+.pricing-head {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* ============ TAGLINE ============ */
+.pricing-tag {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ============ TITLE — Fraunces serif ============ */
+.pricing-title {
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  color: var(--heading);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.pricing-title .highlight-box {
+  display: inline-block;
+  background: var(--highlight-lime);
+  color: var(--heading);
+  font-style: italic;
+  font-weight: 600;
+  padding: 2px 16px 8px;
+  border-radius: 6px;
+  line-height: 1;
+  margin-left: 6px;
+}
+
+/* ============ DESCRIPTION ============ */
+.pricing-desc {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.pricing-desc strong {
+  color: var(--heading);
+  font-weight: 600;
+}
+
+.pricing-desc + .pricing-desc {
+  margin-top: 14px;
+}
+
+/* ============ GRID ============ */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  align-items: start;
+}
+
+/* ============ CARD ============ */
+.plan-card {
+  background: var(--card-blue);
+  border-radius: 20px;
+  overflow: hidden;
+  color: var(--text-white);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  box-shadow:
+    0 15px 35px rgba(43, 63, 212, 0.25),
+    0 5px 15px rgba(43, 63, 212, 0.15);
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 25px 50px rgba(43, 63, 212, 0.35),
+    0 10px 25px rgba(43, 63, 212, 0.2);
+}
+
+/* ============ HEAD ============ */
+.plan-head {
+  padding: 28px 24px 20px;
+  text-align: center;
+}
+
+.plan-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-white);
+  margin: 0;
+}
+
+/* ============ PRICE ============ */
+.plan-price-bar {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 22px 24px;
+  text-align: center;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+}
+
+.plan-price .old {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  text-decoration: line-through;
+  margin-right: 6px;
+  font-weight: 500;
+}
+
+.plan-price .amount {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-white);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.plan-price .slash {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-orange);
+  margin-left: -6px;
+}
+
+/* ============ FEATURES ============ */
+.plan-features {
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.plan-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* INLINE SVG CHECKMARK — green */
+.plan-feature .check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--check-green);
+  flex-shrink: 0;
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+}
+
+.plan-feature .check svg {
+  display: block;
+  stroke: var(--check-green);
+}
+
+/* ============ NOTE ============ */
+.plan-note {
+  padding: 0 24px 24px;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text-light);
+  text-align: center;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============ CTA ============ */
+.plan-cta {
+  padding: 24px;
+  text-align: center;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plan-cta-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-white);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.plan-cta-btn:hover {
+  transform: scale(1.05);
+}
+
+.plan-cta-btn .label {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.plan-cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  width: 90px;
+  height: 55px;
+  background: var(--accent-orange);
+  border-radius: 50% 40% 45% 55% / 50% 55% 45% 50%;
+  z-index: -1;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.plan-cta-btn:hover::before {
+  width: 160px;
+  height: 60px;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.plan-cta-btn::after {
+  content: '• • •';
+  position: absolute;
+  top: -12px;
+  right: -22px;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: var(--text-white);
+  opacity: 0.5;
+  line-height: 1;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 992px) {
+  .plans-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .plan-card:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: 420px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .pricing-section {
+    padding: 40px 16px;
+  }
+
+  .pricing-head {
+    margin-bottom: 40px;
+  }
+
+  .pricing-tag {
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+  }
+
+  .pricing-title {
+    font-size: 1.9rem;
+    margin-bottom: 22px;
+  }
+
+  .pricing-title .highlight-box {
+    padding: 2px 10px 6px;
+    margin-left: 4px;
+  }
+
+  .pricing-desc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .plans-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .plan-card:nth-child(3) {
+    max-width: 100%;
+  }
+
+  .plan-name {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
+
+  .plan-price .amount {
+    font-size: 1.9rem;
+  }
+
+  .plan-price .slash {
+    font-size: 1.7rem;
+  }
+
+  .plan-price .old {
+    font-size: 0.8rem;
+  }
+
+  .plan-feature {
+    font-size: 0.85rem;
+  }
+
+  .plan-cta {
+    min-height: 90px;
+    padding: 20px;
+  }
+
+  .plan-cta-btn {
+    font-size: 0.95rem;
+  }
+
+  .plan-cta-btn::before {
+    width: 85px;
+    height: 50px;
+  }
+}

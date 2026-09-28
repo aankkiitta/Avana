@@ -9,7 +9,7 @@ import {
   faWandMagicSparkles,
 } from '@fortawesome/free-solid-svg-icons';
 import './Services.css';
-
+ 
 const Services = () => {
   const sectionRef = useRef(null);
 
