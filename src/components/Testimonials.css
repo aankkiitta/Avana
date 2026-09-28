@@ -12,6 +12,7 @@
   font-family: 'Inter', sans-serif;
   position: relative;
   overflow: hidden;
+    background-image: url('../image/review.png'); 
 }
 .testimonials-header {
   text-align: center;
