@@ -1,51 +1,38 @@
-import React from 'react';
-import Layout from './components/Layout';
-import Hero from './components/Hero';
-import AvanaReveal from './components/AvanaReveal';
-import Services from './components/Services';
-import Pricing from './components/Pricing';
-import VisionMissionGoals from './components/VisionMissionGoals';
-import OurWork from './components/OurWork';
-
-import Testimonials from './components/Testimonials';
-import FAQ from './components/FAQ';
-import AboutUs from './components/AboutUs';
-import ContactUs from './components/ContactUs';
-import Footer from './components/Footer';
-import FloatingButton from './components/FloatingButton';
+import React from "react";
+import Layout from "./components/Layout";
+import Hero from "./components/Hero";
 import New from "./components/New";
-import Templates from './components/Templates';
-import Stats from './components/Stats';
-import Meaningful from "./components/Meaningful";
+import Services from "./components/Services";
+import OurWork from "./components/OurWork";
+import Templates from "./components/Templates";
+import Pricing from "./components/Pricing";
+import VisionMissionGoals from "./components/VisionMissionGoals";
+import AboutUs from "./components/AboutUs";
+import Testimonials from "./components/Testimonials";
+import FAQ from "./components/FAQ";
+import Meaningful from "./components/meaningful";
+import Stats from "./components/Stats";
+import ContactUs from "./components/ContactUs";
+import Footer from "./components/Footer";
+import FloatingButton from "./components/FloatingButton";
+
 function App() {
   return (
-  <Layout>
+    <Layout>
       <Hero />
-
       <New />
-
-      
-<Services />
-     
-
+      <Services />
       <OurWork />
-
-    
-
-     
- <Pricing />
- <VisionMissionGoals />
-      
+      <Templates />
+      <Pricing />
+      <VisionMissionGoals />
       <AboutUs />
-        <Templates />
-       <Testimonials />
-<FAQ />
-<Meaningful />
-<Stats />
+      <Testimonials />
+      <FAQ />
+      <Meaningful />
+      <Stats />
       <ContactUs />
-
       <Footer />
-
       <FloatingButton />
     </Layout>
   );
