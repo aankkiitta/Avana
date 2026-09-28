@@ -1,26 +1,28 @@
 /* =========================================
-   FONTS & ICONS (CDN imports)
+   FONTS & ICONS
    ========================================= */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
 
 /* =========================================
    ROOT VARIABLES
    ========================================= */
 :root {
-  --primary-cyan: #9ab829;
-  --primary-dark:  #cde964;
-  --dark-bg: #1a1a2e;
-  --card-bg: #ffffff;
+  --navy: #1c2b4a;
+  --navy-soft: #24365c;
+  --lime: #d4ed4a;
+  --lime-dark: #c5e03a;
+  --lime-readable: #9ab829;
+  --cream: #ebe7e0;
+  --cream-dark: #e4dfd6;
+  --page-bg: #f5f3ef;
   --text-main: #444;
   --text-light: #777;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --page-bg: #f5f3ef;
+  --text-cream: rgba(245, 243, 239, 0.72);
 }
 
 /* =========================================
    PAGE WRAPPER
-   🔥 Parallax: image fixed, content scrolls
    ========================================= */
 .avana-page {
   font-family: "Poppins", sans-serif;
@@ -29,7 +31,7 @@
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
-  background-attachment: fixed;   /* 🔥 Image stays fixed while scrolling */
+  background-attachment: fixed;
   color: var(--text-main);
   line-height: 1.6;
   padding: 60px 20px;
@@ -39,7 +41,6 @@
   overflow: hidden;
 }
 
-/* Light overlay so text stays readable over the fixed image */
 .avana-page::before {
   content: '';
   position: absolute;
@@ -76,31 +77,50 @@
    ========================================= */
 .avana-header {
   text-align: center;
-  max-width: 850px;
-  margin: 0 auto 60px auto;
+  max-width: 900px;
+  margin: 0 auto 50px auto;
 }
 
-.avana-header h1 {
-  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
-  font-weight: 700;
-  color: var(--dark-bg);
-  margin-bottom: 20px;
-  line-height: 1.3;
-  letter-spacing: -0.5px;
+/* 🔥 TITLE — 2 lines, proper size */
+.avana-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+/* 🔥 Lime background box on "Business" */
+.avana-box {
+  background-color: var(--lime);
+  color: var(--navy);
+  padding: 2px 14px;
+  border-radius: 4px;
+  font-style: italic;
+  font-weight: 500;
+  display: inline-block;
 }
 
 .avana-header-text p {
   font-size: 1rem;
   color: var(--text-light);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   line-height: 1.7;
 }
 
-/* Yellow background fix */
+/* 🔥 Highlight — plain by default (context overrides) */
 .avana-highlight {
-  color: var(--primary-cyan);
-  font-weight: 600;
+  color: var(--navy);
+  font-weight: 700;
+  background: none !important;
   background-color: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-style: normal !important;
+  box-shadow: none !important;
+  display: inline !important;
 }
 
 /* =========================================
@@ -109,158 +129,286 @@
 .avana-layout-grid {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
-  gap: 26px !important;
+  gap: 18px !important;
   align-items: stretch;
   visibility: visible !important;
   opacity: 1 !important;
 }
 
 /* =========================================
-   CARD
+   CARD — COMPACT
    ========================================= */
 .avana-service-card {
-  background: var(--card-bg) !important;
-  padding: 32px 28px !important;
-  border-radius: 16px !important;
-  box-shadow: var(--shadow) !important;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  border-top: 3px solid transparent;
+  padding: 26px 24px 28px !important;
+  border-radius: 18px !important;
+  box-shadow: none !important;
+  border: none !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.3s ease;
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
   height: 100% !important;
-  min-height: 200px !important;
+  min-height: 180px !important;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
   visibility: visible !important;
   opacity: 1 !important;
 }
 
 .avana-service-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 195, 218, 0.15) !important;
-  border-top-color: var(--primary-cyan) !important;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12) !important;
 }
 
 /* Icon */
 .avana-icon-box {
-  width: 56px;
-  height: 56px;
-  background-color: rgba(0, 195, 218, 0.1);
-  border-radius: 14px;
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 14px !important;
   display: flex !important;
   align-items: center;
   justify-content: center;
-  color: var(--primary-cyan);
-  font-size: 1.35rem;
-  margin-bottom: 20px;
+  font-size: 20px !important;
+  margin-bottom: 18px !important;
   flex-shrink: 0;
-  transition: all 0.35s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .avana-service-card:hover .avana-icon-box {
-  background-color: var(--primary-cyan);
-  color: #fff;
-  transform: rotate(-6deg) scale(1.05);
+  transform: scale(1.08);
 }
 
 /* Number */
 .avana-service-num {
-  font-size: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem !important;
   font-weight: 600;
-  color: var(--primary-cyan);
-  letter-spacing: 0.25em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 6px !important;
+  display: block;
 }
 
 /* Title */
 .avana-service-card h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--dark-bg) !important;
-  margin: 0 0 12px 0 !important;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.12rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 8px 0 !important;
   line-height: 1.3;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.01em;
 }
 
 /* Text */
 .avana-service-card p {
-  font-size: 0.92rem;
-  color: var(--text-light) !important;
+  font-size: 0.86rem !important;
   margin: 0 !important;
-  line-height: 1.7;
+  line-height: 1.55 !important;
+  font-weight: 400;
+}
+
+/* =========================================
+   VARIANT 1: DARK (Navy) — cards 1 & 3
+   ========================================= */
+.avana-service-card:nth-child(1),
+.avana-service-card:nth-child(3) {
+  background-color: var(--navy) !important;
+  color: #f5f3ef;
+}
+
+.avana-service-card:nth-child(1) .avana-icon-box,
+.avana-service-card:nth-child(3) .avana-icon-box {
+  background-color: var(--lime) !important;
+  color: var(--navy) !important;
+}
+
+.avana-service-card:nth-child(1) .avana-service-num,
+.avana-service-card:nth-child(3) .avana-service-num {
+  color: var(--lime) !important;
+}
+
+.avana-service-card:nth-child(1) h3,
+.avana-service-card:nth-child(3) h3 {
+  color: #f5f3ef !important;
+}
+
+.avana-service-card:nth-child(1) p,
+.avana-service-card:nth-child(3) p {
+  color: var(--text-cream) !important;
+}
+
+.avana-service-card:nth-child(1):hover,
+.avana-service-card:nth-child(3):hover {
+  background-color: var(--navy-soft) !important;
+}
+
+/* =========================================
+   VARIANT 2: ACCENT (Lime) — card 2
+   ========================================= */
+.avana-service-card:nth-child(2) {
+  background-color: var(--lime) !important;
+  color: var(--navy);
+}
+
+.avana-service-card:nth-child(2) .avana-icon-box {
+  background-color: var(--navy) !important;
+  color: var(--lime) !important;
+}
+
+.avana-service-card:nth-child(2) .avana-service-num {
+  color: var(--navy) !important;
+  opacity: 0.75;
+}
+
+.avana-service-card:nth-child(2) h3 {
+  color: var(--navy) !important;
+}
+
+.avana-service-card:nth-child(2) p {
+  color: rgba(28, 43, 74, 0.75) !important;
+}
+
+.avana-service-card:nth-child(2):hover {
+  background-color: var(--lime-dark) !important;
+}
+
+/* =========================================
+   VARIANT 3: LIGHT (Cream) — cards 4, 5, 6
+   ========================================= */
+.avana-service-card:nth-child(4),
+.avana-service-card:nth-child(5),
+.avana-service-card:nth-child(6) {
+  background-color: var(--cream) !important;
+  color: var(--navy);
+}
+
+.avana-service-card:nth-child(4) .avana-icon-box,
+.avana-service-card:nth-child(5) .avana-icon-box,
+.avana-service-card:nth-child(6) .avana-icon-box {
+  background-color: #f5f3ef !important;
+  color: var(--navy) !important;
+  border: 1px solid rgba(28, 43, 74, 0.06);
+}
+
+.avana-service-card:nth-child(4) .avana-service-num,
+.avana-service-card:nth-child(5) .avana-service-num,
+.avana-service-card:nth-child(6) .avana-service-num {
+  color: var(--lime-readable) !important;
+}
+
+.avana-service-card:nth-child(4) h3,
+.avana-service-card:nth-child(5) h3,
+.avana-service-card:nth-child(6) h3 {
+  color: var(--navy) !important;
+}
+
+.avana-service-card:nth-child(4) p,
+.avana-service-card:nth-child(5) p,
+.avana-service-card:nth-child(6) p {
+  color: #666 !important;
+}
+
+.avana-service-card:nth-child(4):hover,
+.avana-service-card:nth-child(5):hover,
+.avana-service-card:nth-child(6):hover {
+  background-color: var(--cream-dark) !important;
+}
+
+/* =========================================
+   🔥 HIGHLIGHT COLORS — context aware
+   ========================================= */
+.avana-header .avana-highlight {
+  color: var(--lime-readable) !important;
+}
+
+.avana-service-card:nth-child(1) .avana-highlight,
+.avana-service-card:nth-child(3) .avana-highlight {
+  color: var(--lime) !important;
+}
+
+.avana-service-card:nth-child(2) .avana-highlight {
+  color: var(--navy) !important;
+}
+
+.avana-service-card:nth-child(4) .avana-highlight,
+.avana-service-card:nth-child(5) .avana-highlight,
+.avana-service-card:nth-child(6) .avana-highlight {
+  color: var(--navy) !important;
 }
 
 /* =========================================
    RESPONSIVE
    ========================================= */
 @media (max-width: 1024px) {
+  .avana-title { font-size: 1.9rem; }
+
   .avana-layout-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 22px !important;
+    gap: 16px !important;
+  }
+
+  .avana-service-card {
+    padding: 24px 22px 26px !important;
+    min-height: 170px !important;
   }
 }
 
 @media (max-width: 768px) {
   .avana-page {
     padding: 45px 16px;
-    /* 🔥 Mobile browsers background-attachment: fixed support nahi karte */
     background-attachment: scroll;
   }
 
-  .avana-header {
-    margin-bottom: 45px;
+  .avana-header { margin-bottom: 40px; }
+
+  .avana-title {
+    font-size: 1.6rem;
+    line-height: 1.35;
   }
 
-  .avana-header h1 {
-    font-size: 1.5rem;
-  }
+  .avana-title br { display: none; }  /* Mobile pe ek line */
 
-  .avana-header-text p {
-    font-size: 0.92rem;
-  }
+  .avana-box { padding: 2px 10px; }
+
+  .avana-header-text p { font-size: 0.92rem; }
 
   .avana-layout-grid {
     grid-template-columns: 1fr !important;
-    gap: 20px !important;
+    gap: 14px !important;
   }
 
   .avana-service-card {
-    padding: 26px 22px !important;
-    border-radius: 14px !important;
+    padding: 22px 20px 24px !important;
+    border-radius: 16px !important;
     min-height: auto !important;
   }
 
   .avana-icon-box {
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
-    border-radius: 12px;
-    margin-bottom: 16px;
+    width: 46px !important;
+    height: 46px !important;
+    font-size: 18px !important;
+    border-radius: 12px !important;
+    margin-bottom: 14px !important;
   }
 
   .avana-service-card h3 {
-    font-size: 1.08rem;
-    margin-bottom: 10px !important;
+    font-size: 1.05rem !important;
+    margin-bottom: 6px !important;
   }
 
   .avana-service-card p {
-    font-size: 0.86rem;
-    line-height: 1.65;
+    font-size: 0.85rem !important;
+    line-height: 1.55 !important;
   }
 }
 
 @media (max-width: 400px) {
-  .avana-header h1 {
-    font-size: 1.3rem;
-  }
+  .avana-title { font-size: 1.35rem; }
 
-  .avana-service-card h3 {
-    font-size: 1rem;
-  }
-
-  .avana-service-card p {
-    font-size: 0.83rem;
-  }
+  .avana-service-card { padding: 20px 18px 22px !important; }
+  .avana-service-card h3 { font-size: 1rem !important; }
+  .avana-service-card p { font-size: 0.83rem !important; }
 }

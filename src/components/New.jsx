@@ -45,7 +45,11 @@ export default function New() {
       <div className="avana-container">
         {/* ================= HEADER ================= */}
         <header className="avana-header">
-          <h1>Creative Websites. Built for Your Vision.</h1>
+          <h1 className="avana-title">
+            We Build Digital Solutions
+            <br />
+            That Help Your <span className="avana-box">Business</span> Grow
+          </h1>
 
           <div className="avana-header-text">
             <p>

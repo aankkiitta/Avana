@@ -19,7 +19,7 @@ function App() {
   return (
   <Layout>
       <Hero />
-
+< AvanaReveal />
       <New />
 
       <Services />
