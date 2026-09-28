@@ -7,19 +7,29 @@
    TESTIMONIALS SECTION
    ========================================= */
 .testimonials {
-  padding: 80px 0 60px;
+  padding: 30px 0 10px;              /* 🔥 top 30, bottom 10 — tight */
   background-color: #f5f3ef;
+  background-image: url('../image/review5.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;      /* 🔥 fixed nahi, warna mobile pe issue */
   font-family: 'Inter', sans-serif;
   position: relative;
   overflow: hidden;
-    background-image: url('../image/review.png'); 
+  margin: 0;                          /* 🔥 koi margin nahi */
+  min-height: auto;
 }
+
 .testimonials-header {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 15px;
+  margin: 0 auto 10px;                /* 🔥 15 → 10 */
   padding: 0 20px;
+  position: relative;
+  z-index: 1;
 }
+
 .testimonials-tag {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
@@ -27,7 +37,7 @@
   color: #9ab829;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -47,7 +57,7 @@
   font-weight: 500;
   line-height: 1.2;
   color: #1c2b4a;
-  margin: 0 0 14px;
+  margin: 0 0 10px;
 }
 
 .testimonials-heading .highlight {
@@ -87,21 +97,18 @@
 }
 
 /* =========================================
-   🔥 CURVE CAROUSEL — MAIN CONTAINER
+   🔥 CURVE CAROUSEL
    ========================================= */
 .curve-carousel {
   position: relative;
+  z-index: 1;
   width: 100%;
- height: 420px;              /* 520 → 420 (kam kiya) */
-  overflow: visible;          /* hidden → visible (cards bahar dikhenge) */
-  margin-bottom: 20px;
+  height: 360px;                     /* 🔥 380 → 360 */
+  overflow: visible;
+  margin: 0;                         /* 🔥 koi margin nahi */
+  padding: 0;
 }
 
-.curve-track {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
 .curve-track {
   position: relative;
   width: 100%;
@@ -112,7 +119,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 280px;               /* 300 → 280 (chhota, taaki zyada fit ho) */
+  width: 280px;
   padding: 22px 20px;
   background-color: #faf8f4;
   border: 1.5px solid rgba(28, 43, 74, 0.08);
@@ -120,7 +127,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  min-height: 240px;          /* 260 → 240 */
+  min-height: 220px;                 /* 🔥 240 → 220 */
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
   cursor: pointer;
   will-change: transform, opacity;
@@ -143,6 +150,7 @@
 .review-card:not(.active):hover {
   border-color: rgba(212, 237, 74, 0.8);
 }
+
 /* =========================================
    CARD INNER CONTENT
    ========================================= */
@@ -239,9 +247,12 @@
    BOTTOM CTA
    ========================================= */
 .reviews-cta {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin: 0;                         /* 🔥 top+bottom dono 0 */
+  padding: 0 20px 20px;              /* 🔥 sirf niche 20px */
 }
 
 .reviews-cta-btn {
@@ -584,36 +595,33 @@
    RESPONSIVE
    ========================================= */
 @media (max-width: 1024px) {
-  .curve-carousel { height: 480px; }
-  .review-card { width: 290px; padding: 22px; min-height: 280px; }
+  .curve-carousel { height: 420px; }
+  .review-card { width: 290px; padding: 22px; min-height: 260px; }
 }
 
 @media (max-width: 640px) {
-  .testimonials { padding: 60px 0 40px; }
-  .curve-carousel { height: 460px; }
-  .review-card { width: 260px; padding: 20px; min-height: 270px; }
+  .testimonials { padding: 20px 0 5px; }        /* 🔥 tight */
+  .curve-carousel {
+    height: 400px;
+    margin: 0;
+  }
+  .reviews-cta {
+    margin: 0;
+    padding: 0 16px 15px;
+  }
+  .review-card { width: 260px; padding: 20px; min-height: 250px; }
   .review-modal { padding: 28px 22px 24px; }
   .review-modal-title { font-size: 1.5rem; }
   .review-modal-row { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 400px) {
-  .curve-carousel { height: 430px; }
-  .review-card { width: 230px; padding: 18px; min-height: 250px; }
+  .testimonials { padding: 15px 0 5px; }        /* 🔥 aur tight */
+  .curve-carousel { height: 380px; }
+  .review-card { width: 230px; padding: 18px; min-height: 230px; }
   .review-text { font-size: 0.82rem; }
   .review-quote { font-size: 3rem; }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* =========================================
    🔥 SUCCESS POPUP

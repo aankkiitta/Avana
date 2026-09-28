@@ -1,0 +1,133 @@
+/* =========================================
+   FONTS
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700;800;900&display=swap');
+
+/* =========================================
+   WRAPPER — no extra bottom padding
+   ========================================= */
+.meaningful-wrap {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 40px 30px 0;   /* 🔥 bottom 0 — gap remove */
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* =========================================
+   HEADING — bottom margin kam
+   ========================================= */
+.meaningful-heading {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3.5rem);  
+  font-weight: 800;
+  color: #000000;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px 0;    /* 🔥 40px → 20px */
+  padding: 0;
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+/* HIGHLIGHT */
+.meaningful-highlight {
+  position: relative;
+  display: inline-block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: normal;
+  font-weight: 800;
+  color: #1a56f0;
+  padding: 1px 8px;
+  margin: 0 4px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  vertical-align: middle;
+}
+
+.meaningful-highlight::before {
+  content: '';
+  position: absolute;
+  inset: -2px -2px;
+  border: 1.5px solid #1a56f0;
+  pointer-events: none;
+}
+
+/* CORNER HANDLES */
+.meaningful-handle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  border: 1.5px solid #1a56f0;
+  z-index: 2;
+}
+.meaningful-handle-tl { top: -5px; left: -5px; }
+.meaningful-handle-tr { top: -5px; right: -5px; }
+.meaningful-handle-bl { bottom: -5px; left: -5px; }
+.meaningful-handle-br { bottom: -5px; right: -5px; }
+
+/* CURSOR */
+.meaningful-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -13px;
+  right: -10px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 13px solid #1a56f0;
+  transform: rotate(-35deg);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* SPARKLES */
+.meaningful-sparkle {
+  position: absolute;
+  color: #f5b800;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.meaningful-sparkle-1 { right: 10px; top: 55%; font-size: 1em; }
+.meaningful-sparkle-2 { right: -10px; top: 80%; font-size: 0.65em; }
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .meaningful-wrap { padding: 35px 24px 0; }
+  .meaningful-heading {
+    font-size: clamp(1.25rem, 2.2vw, 2rem);
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .meaningful-wrap { padding: 30px 20px 0; }
+  .meaningful-heading {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    white-space: normal;
+    margin-bottom: 16px;
+    text-align: center;      /* 🔥 Center align */
+  }
+  .meaningful-highlight { padding: 1px 6px; margin: 0 2px; }
+  .meaningful-sparkle-1 { right: 4px; font-size: 0.9em; }
+  .meaningful-sparkle-2 { right: -6px; font-size: 0.55em; }
+}
+
+@media (max-width: 400px) {
+  .meaningful-wrap { padding: 25px 16px 0; }
+  .meaningful-heading {
+    font-size: 1.15rem;
+    line-height: 1.45;
+    margin-bottom: 14px;
+    text-align: center;      /* 🔥 Center align */
+  }
+  .meaningful-highlight { padding: 1px 4px; margin: 0 2px; }
+}

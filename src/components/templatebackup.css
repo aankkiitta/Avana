@@ -1,37 +1,33 @@
-/* =========================================
-   FONTS
-   ========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 
-/* =========================================
-   ROOT VARIABLES
-   ========================================= */
 :root {
   --tpl-bg: #f5f3ef;
   --tpl-card-bg: #ffffff;
   --tpl-navy: #1c2b4a;
-  --tpl-navy-soft: #24365c;
-  --tpl-lime: #d4ed4a;
-  --tpl-lime-dark: #c5e03a;
+  --tpl-navy-soft: #2a3d63;
+  --tpl-cyan: #00c3da;
+  --tpl-lime: #c5e63f;
+  --tpl-lime-dark: #a8c92e;
   --tpl-text: #4b5563;
   --tpl-text-light: #6b7280;
-  --tpl-border: #e5e7eb;
+  --tpl-border: #e8e4dc;
+  --tpl-shadow: 0 8px 24px rgba(28, 43, 74, 0.06);
+  --tpl-shadow-hover: 0 20px 45px rgba(28, 43, 74, 0.14);
 }
 
 /* =========================================
-   SECTION
+   SECTION — TOP MARGIN REMOVED
    ========================================= */
 .tpl-section {
   position: relative;
-  background-color: var(--tpl-bg);
-  background-image: none;
-  padding: 60px 20px 80px;
+  background-color: #f5f3ef;      /* 🔥 solid color, no gradient */
+  background-image: none;          /* 🔥 greenish glow hataya */
+  padding: 40px 20px 100px;
   margin: 0;
   font-family: 'Inter', sans-serif;
   width: 100%;
   box-sizing: border-box;
 }
-
 .tpl-inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -43,36 +39,28 @@
    ========================================= */
 .tpl-header {
   text-align: center;
-  margin-bottom: 36px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 32px;
 }
 
 .tpl-heading {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 500;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
   color: var(--tpl-navy);
   margin: 0 0 12px;
   letter-spacing: -0.02em;
-  line-height: 1.2;
 }
 
 .tpl-heading span {
-  color: var(--tpl-navy);
+  color: var(--tpl-lime);
   font-style: italic;
-  background-color: var(--tpl-lime);
-  padding: 2px 14px;
-  border-radius: 4px;
-  display: inline-block;
+  font-weight: 600;
 }
 
 .tpl-subtext {
-  font-size: 0.98rem;
-  color: var(--tpl-text-light);
+  font-size: 1.02rem;
+  color: var(--tpl-text);
   margin: 0;
-  line-height: 1.6;
 }
 
 /* =========================================
@@ -81,7 +69,7 @@
 .tpl-search-wrap {
   display: flex;
   justify-content: center;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
 }
 
 .tpl-search {
@@ -89,25 +77,24 @@
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 460px;
-  height: 50px;
+  max-width: 480px;
+  height: 54px;
   background: #ffffff;
-  border-radius: 10px;
-  border: 1px solid var(--tpl-border);
-  padding: 0 6px 0 18px;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(28, 43, 74, 0.08);
+  padding: 0 8px 0 22px;
   box-sizing: border-box;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: box-shadow 0.25s ease;
 }
 
 .tpl-search:focus-within {
-  border-color: var(--tpl-navy);
-  box-shadow: 0 0 0 3px rgba(28, 43, 74, 0.06);
+  box-shadow: 0 8px 24px rgba(28, 43, 74, 0.12), 0 0 0 3px rgba(28, 43, 74, 0.08);
 }
 
 .tpl-search-icon {
   flex-shrink: 0;
   color: #9ca3af;
-  margin-right: 10px;
+  margin-right: 12px;
 }
 
 .tpl-search input {
@@ -117,7 +104,7 @@
   outline: none;
   background: transparent;
   font-family: 'Inter', sans-serif;
-  font-size: 0.92rem;
+  font-size: 0.98rem;
   color: var(--tpl-navy);
   padding: 0;
   min-width: 0;
@@ -129,9 +116,9 @@
 
 .tpl-search-filter {
   flex-shrink: 0;
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   background: var(--tpl-navy);
   color: #ffffff;
   border: none;
@@ -139,11 +126,15 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(28, 43, 74, 0.25);
 }
 
 .tpl-search-filter:hover {
-  background: var(--tpl-navy-soft);
+  background: var(--tpl-lime);
+  color: var(--tpl-navy);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(197, 230, 63, 0.5);
 }
 
 /* =========================================
@@ -152,7 +143,7 @@
 .tpl-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: 28px;
 }
 
 .tpl-no-result {
@@ -160,10 +151,7 @@
   text-align: center;
   padding: 60px 20px;
   color: var(--tpl-text-light);
-  font-size: 1rem;
-  background: #ffffff;
-  border-radius: 14px;
-  border: 1px dashed var(--tpl-border);
+  font-size: 1.05rem;
 }
 
 /* =========================================
@@ -171,17 +159,19 @@
    ========================================= */
 .tpl-card {
   background: var(--tpl-card-bg);
-  border-radius: 14px;
+  border-radius: 18px;
   overflow: hidden;
+  box-shadow: var(--tpl-shadow);
   border: 1px solid var(--tpl-border);
   display: flex;
   flex-direction: column;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tpl-card:hover {
-  border-color: var(--tpl-navy);
-  box-shadow: 0 12px 30px rgba(28, 43, 74, 0.08);
+  transform: translateY(-8px);
+  box-shadow: var(--tpl-shadow-hover);
+  border-color: rgba(197, 230, 63, 0.5);
 }
 
 .tpl-image-wrap {
@@ -189,7 +179,7 @@
   width: 100%;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: #f3f4f6;
+  background: #e8e4dc;
 }
 
 .tpl-image-wrap img {
@@ -197,82 +187,82 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s ease;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tpl-card:hover .tpl-image-wrap img {
-  transform: scale(1.04);
+  transform: scale(1.06);
 }
 
 .tpl-image-overlay {
-  display: none;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(28, 43, 74, 0) 50%, rgba(28, 43, 74, 0.15) 100%);
+  pointer-events: none;
 }
 
-/* CATEGORY badge */
+/* 🔥 CATEGORY — top-right */
 .tpl-badge {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  padding: 5px 11px;
-  border-radius: 6px;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  background: #ffffff;
-  color: var(--tpl-navy);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  top: 14px;
+  right: 14px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(28, 43, 74, 0.85);
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
   z-index: 2;
 }
 
-/* PRICE badge */
+/* 🔥 PRICE — top-left (opposite) */
 .tpl-price-badge {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  padding: 5px 11px;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  background: var(--tpl-navy);
-  color: #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  top: 14px;
+  left: 14px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  background: var(--tpl-lime);
+  color: var(--tpl-navy);
+  box-shadow: 0 4px 14px rgba(197, 230, 63, 0.5);
   z-index: 2;
 }
 
-/* =========================================
-   CARD CONTENT
-   ========================================= */
 .tpl-content {
-  padding: 20px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
 .tpl-name {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   font-weight: 800;
   color: var(--tpl-navy);
-  margin: 0 0 3px;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
+  margin: 0 0 4px;
+  letter-spacing: 0.02em;
 }
 
 .tpl-subtitle {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--tpl-text-light);
-  margin: 0 0 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--tpl-cyan);
+  margin: 0 0 10px;
 }
 
 .tpl-desc {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--tpl-text-light);
-  margin: 0 0 18px;
-  line-height: 1.55;
+  margin: 0 0 20px;
+  line-height: 1.6;
   flex-grow: 1;
 }
 
@@ -282,8 +272,8 @@
 .tpl-btn-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
 .tpl-btn {
@@ -291,14 +281,14 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 10px;
+  padding: 11px 10px;
   font-family: 'Inter', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.2s ease;
-  border: 1px solid transparent;
+  transition: all 0.25s ease;
+  border: 1.5px solid transparent;
   white-space: nowrap;
 }
 
@@ -311,16 +301,20 @@
 .tpl-btn-preview:hover {
   background: var(--tpl-navy-soft);
   border-color: var(--tpl-navy-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(28, 43, 74, 0.3);
 }
 
 .tpl-btn-details {
-  background: #ffffff;
+  background: transparent;
   color: var(--tpl-navy);
-  border-color: var(--tpl-border);
+  border-color: rgba(28, 43, 74, 0.2);
 }
 
 .tpl-btn-details:hover {
+  background: rgba(28, 43, 74, 0.05);
   border-color: var(--tpl-navy);
+  transform: translateY(-2px);
 }
 
 .tpl-btn-make {
@@ -328,21 +322,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 11px;
+  gap: 8px;
+  padding: 13px;
   background: var(--tpl-lime);
   color: var(--tpl-navy);
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-family: 'Inter', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 700;
+  font-size: 0.95rem;
+  font-weight: 800;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 16px rgba(197, 230, 63, 0.35);
 }
 
 .tpl-btn-make:hover {
   background: var(--tpl-lime-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(197, 230, 63, 0.5);
 }
 
 /* =========================================
@@ -351,31 +348,36 @@
 .tpl-load-more-wrap {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 48px;
 }
 
 .tpl-load-more {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 13px 32px;
+  gap: 10px;
+  padding: 15px 36px;
   background: var(--tpl-navy);
   color: #ffffff;
   border: none;
-  border-radius: 8px;
+  border-radius: 999px;
   font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 22px rgba(28, 43, 74, 0.25);
 }
 
 .tpl-load-more:hover {
-  background: var(--tpl-navy-soft);
+  background: var(--tpl-lime);
+  color: var(--tpl-navy);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(197, 230, 63, 0.5);
 }
 
 .tpl-load-more svg {
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
 }
 
 .tpl-load-more:hover svg {
@@ -388,9 +390,9 @@
 .tpl-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(28, 43, 74, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 99999;
   display: flex;
   align-items: center;
@@ -410,20 +412,20 @@
 .tpl-modal {
   position: relative;
   background: #ffffff;
-  border-radius: 16px;
+  border-radius: 20px;
   width: 100%;
-  max-width: 520px;
-  max-height: 88vh;
+  max-width: 540px;
+  max-height: 85vh;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
-  animation: tplSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  animation: tplSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
   min-height: 0;
 }
 
 @keyframes tplSlideUp {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -434,7 +436,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.95);
   border: none;
   display: flex;
   align-items: center;
@@ -442,16 +444,17 @@
   cursor: pointer;
   z-index: 10;
   color: var(--tpl-navy);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, background 0.25s ease;
 }
 
 .tpl-modal-close:hover {
   transform: rotate(90deg);
+  background: var(--tpl-lime);
 }
 
 /* =========================================
-   MODAL — SCROLL
+   MODAL — SCROLL AREA
    ========================================= */
 .tpl-modal-scroll {
   flex: 1 1 auto;
@@ -460,8 +463,14 @@
   min-height: 0;
 }
 
-.tpl-modal-scroll::-webkit-scrollbar { width: 6px; }
-.tpl-modal-scroll::-webkit-scrollbar-track { background: transparent; }
+.tpl-modal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tpl-modal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 .tpl-modal-scroll::-webkit-scrollbar-thumb {
   background: #d1d5db;
   border-radius: 3px;
@@ -471,12 +480,9 @@
   background: var(--tpl-navy);
 }
 
-/* =========================================
-   MODAL — IMAGE
-   ========================================= */
 .tpl-modal-image {
   width: 100%;
-  height: 170px;
+  height: 160px;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -488,61 +494,57 @@
   display: block;
 }
 
-/* =========================================
-   MODAL — BODY
-   ========================================= */
 .tpl-modal-body {
-  padding: 24px 24px 20px;
+  padding: 20px 24px 18px;
 }
 
 .tpl-modal-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   font-weight: 800;
   color: var(--tpl-navy);
   margin: 0 0 4px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
 }
 
 .tpl-modal-subtitle {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: var(--tpl-text-light);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--tpl-cyan);
   margin: 0 0 8px;
 }
 
 .tpl-modal-desc {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--tpl-text-light);
-  margin: 0 0 20px;
-  line-height: 1.6;
+  margin: 0 0 18px;
+  line-height: 1.55;
 }
 
 /* =========================================
-   MODAL — PRICE (simple)
+   MODAL — PRICE BOX
    ========================================= */
 .tpl-modal-price-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
-  background: #f9fafb;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #faf9f6 0%, #f3f1ea 100%);
   border: 1px solid var(--tpl-border);
-  border-radius: 10px;
+  border-radius: 12px;
   margin-bottom: 20px;
 }
 
 .tpl-modal-price-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 0.7rem;
+  font-weight: 800;
   color: var(--tpl-text-light);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .tpl-modal-price-value {
   color: var(--tpl-navy);
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   font-weight: 800;
   line-height: 1;
 }
@@ -551,7 +553,7 @@
    MODAL — SECTIONS
    ========================================= */
 .tpl-modal-section {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .tpl-modal-section:last-child {
@@ -559,67 +561,63 @@
 }
 
 .tpl-modal-section-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 800;
   color: var(--tpl-navy);
   margin: 0 0 10px;
 }
 
-/* Pages tags */
 .tpl-modal-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 7px;
 }
 
 .tpl-modal-tag {
-  background: #f3f4f6;
+  background: #f1f5f9;
   color: var(--tpl-navy);
   padding: 6px 12px;
-  border-radius: 6px;
+  border-radius: 999px;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
-/* Features */
 .tpl-modal-features {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6px 20px;
+  gap: 8px;
 }
 
 .tpl-modal-feature {
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   color: var(--tpl-text);
-  font-weight: 400;
-  padding: 3px 0;
+  font-weight: 500;
 }
 
-/* Tech */
 .tpl-modal-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 7px;
 }
 
 .tpl-modal-tech-item {
   border: 1px solid var(--tpl-border);
   color: var(--tpl-navy);
-  padding: 5px 12px;
-  border-radius: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
   font-size: 0.78rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* =========================================
-   MODAL — FOOTER
+   MODAL — STICKY FOOTER
    ========================================= */
 .tpl-modal-footer {
   flex-shrink: 0;
   padding: 14px 24px 18px;
   background: #ffffff;
   border-top: 1px solid var(--tpl-border);
+  box-shadow: 0 -8px 20px rgba(28, 43, 74, 0.06);
 }
 
 .tpl-modal-actions {
@@ -633,14 +631,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   padding: 11px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-family: 'Inter', sans-serif;
-  font-size: 0.86rem;
-  font-weight: 600;
+  font-size: 0.88rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s ease;
-  border: 1px solid transparent;
+  transition: all 0.25s ease;
+  border: 1.5px solid transparent;
 }
 
 .tpl-modal-btn-preview {
@@ -651,16 +650,20 @@
 
 .tpl-modal-btn-preview:hover {
   background: var(--tpl-navy-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(28, 43, 74, 0.3);
 }
 
 .tpl-modal-btn-download {
-  background: #ffffff;
+  background: transparent;
   color: var(--tpl-navy);
-  border-color: var(--tpl-border);
+  border-color: rgba(28, 43, 74, 0.2);
 }
 
 .tpl-modal-btn-download:hover {
+  background: rgba(28, 43, 74, 0.05);
   border-color: var(--tpl-navy);
+  transform: translateY(-2px);
 }
 
 .tpl-modal-btn-make {
@@ -669,16 +672,19 @@
   background: var(--tpl-lime);
   color: var(--tpl-navy);
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 0.95rem;
+  font-weight: 800;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 16px rgba(197, 230, 63, 0.35);
 }
 
 .tpl-modal-btn-make:hover {
   background: var(--tpl-lime-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(197, 230, 63, 0.5);
 }
 
 /* =========================================
@@ -686,33 +692,31 @@
    ========================================= */
 @media (max-width: 1024px) {
   .tpl-grid { grid-template-columns: repeat(2, 1fr); }
-  .tpl-section { padding: 50px 20px 70px; }
+  .tpl-section { padding: 30px 20px 80px; }
 }
 
 @media (max-width: 768px) {
   .tpl-grid { grid-template-columns: 1fr; }
-  .tpl-heading { font-size: 1.6rem; }
+  .tpl-heading { font-size: 1.9rem; }
   .tpl-search { max-width: 100%; }
 
-  .tpl-modal-overlay { padding: 12px; }
-  .tpl-modal { max-height: 92vh; border-radius: 14px; }
-  .tpl-modal-image { height: 150px; }
-  .tpl-modal-body { padding: 20px 18px 16px; }
+  .tpl-modal-overlay { padding: 10px; }
+  .tpl-modal { max-height: 90vh; border-radius: 16px; }
+  .tpl-modal-image { height: 140px; }
+  .tpl-modal-body { padding: 18px 18px 14px; }
   .tpl-modal-footer { padding: 12px 18px 16px; }
   .tpl-modal-features { grid-template-columns: 1fr; }
   .tpl-modal-actions { grid-template-columns: 1fr; }
-  .tpl-modal-title { font-size: 1.25rem; }
-  .tpl-modal-price-value { font-size: 1.15rem; }
+  .tpl-modal-title { font-size: 1.3rem; }
+  .tpl-modal-price-value { font-size: 1.5rem; }
 
-  .tpl-price-badge { font-size: 0.75rem; padding: 4px 9px; top: 10px; left: 10px; }
-  .tpl-badge { font-size: 0.62rem; padding: 4px 9px; top: 10px; right: 10px; }
+  .tpl-price-badge { font-size: 0.8rem; padding: 6px 12px; top: 10px; left: 10px; }
+  .tpl-badge { font-size: 0.66rem; padding: 6px 12px; top: 10px; right: 10px; }
 
-  .tpl-load-more { padding: 12px 26px; font-size: 0.88rem; }
+  .tpl-load-more { padding: 13px 28px; font-size: 0.9rem; }
 }
 
 @media (max-width: 400px) {
   .tpl-btn-row { grid-template-columns: 1fr; }
-  .tpl-modal-price-value { font-size: 1.1rem; }
-  .tpl-modal-body { padding: 18px 16px 14px; }
-  .tpl-modal-footer { padding: 12px 16px 16px; }
+  .tpl-modal-price-value { font-size: 1.4rem; }
 }

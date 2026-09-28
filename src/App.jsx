@@ -15,15 +15,17 @@ import Footer from './components/Footer';
 import FloatingButton from './components/FloatingButton';
 import New from "./components/New";
 import Templates from './components/Templates';
+import Stats from './components/Stats';
+import Meaningful from "./components/Meaningful";
 function App() {
   return (
   <Layout>
       <Hero />
 
       <New />
-< AvanaReveal />
-      <Services />
 
+      
+<Services />
      
 
       <OurWork />
@@ -38,7 +40,8 @@ function App() {
         <Templates />
        <Testimonials />
 <FAQ />
-
+<Meaningful />
+<Stats />
       <ContactUs />
 
       <Footer />

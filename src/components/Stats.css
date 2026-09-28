@@ -1,0 +1,139 @@
+/* =========================================
+   FONTS
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* =========================================
+   STATS SECTION
+   ========================================= */
+.stats-section {
+  position: relative;
+  background-color: transparent;
+  background-image: url('../image/stats.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+/* 🔥 Top padding 0 — heading ke saath connect */
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 30px 40px;   /* 🔥 top 0, bottom 40 */
+}
+
+/* GRID */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.stat-card {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  padding: 32px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 140px;
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+
+.stat-card:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* CORNERS */
+.stat-corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: rgba(28, 43, 74, 0.4);
+  border-style: solid;
+  border-width: 0;
+}
+.stat-corner-tl { top: 6px; left: 6px; border-top-width: 1.5px; border-left-width: 1.5px; }
+.stat-corner-tr { top: 6px; right: 6px; border-top-width: 1.5px; border-right-width: 1.5px; }
+.stat-corner-bl { bottom: 6px; left: 6px; border-bottom-width: 1.5px; border-left-width: 1.5px; }
+.stat-corner-br { bottom: 6px; right: 6px; border-bottom-width: 1.5px; border-right-width: 1.5px; }
+
+/* LINES */
+.stat-line {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  height: 1px;
+  background-color: rgba(28, 43, 74, 0.28);
+}
+.stat-line-top { top: 20px; }
+.stat-line-bottom { bottom: 20px; }
+
+/* VALUE & LABEL */
+.stat-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1c2b4a;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #1c2b4a;
+  margin: 0;
+  line-height: 1.4;
+  max-width: 140px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .stats-container { padding: 0 25px 35px; }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .stat-card { padding: 28px 18px; min-height: 130px; }
+  .stat-value { font-size: 2rem; }
+}
+
+@media (max-width: 640px) {
+  .stats-container { padding: 0 16px 30px; }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .stat-card { padding: 22px 14px; min-height: 120px; }
+  .stat-value { font-size: 1.7rem; }
+  .stat-label { font-size: 0.8rem; max-width: 100px; }
+
+  .stat-corner { width: 12px; height: 12px; }
+  .stat-line { left: 20px; right: 20px; }
+  .stat-line-top { top: 16px; }
+  .stat-line-bottom { bottom: 16px; }
+}
+
+@media (max-width: 400px) {
+  .stats-container { padding: 0 12px 25px; }
+  .stats-grid { gap: 10px; }
+  .stat-card { padding: 20px 12px; min-height: 110px; }
+  .stat-value { font-size: 1.5rem; }
+  .stat-label { font-size: 0.75rem; }
+}
