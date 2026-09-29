@@ -21,7 +21,7 @@ function App() {
     <Layout>
       <Hero />
       <New />
-      <Services />
+  
       <OurWork />
       <Templates />
       <Pricing />
