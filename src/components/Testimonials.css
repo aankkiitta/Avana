@@ -590,39 +590,89 @@
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(212, 237, 74, 0.4);
 }
-
 /* =========================================
    RESPONSIVE
    ========================================= */
+
 @media (max-width: 1024px) {
-  .curve-carousel { height: 420px; }
-  .review-card { width: 290px; padding: 22px; min-height: 260px; }
+  .curve-carousel {
+    height: 420px;
+  }
+
+  .review-card {
+    width: 290px;
+    padding: 22px;
+    min-height: 260px;
+  }
 }
 
 @media (max-width: 640px) {
-  .testimonials { padding: 20px 0 5px; }        /* 🔥 tight */
+  .testimonials {
+    padding: 20px 0 5px;
+
+    /* Show the background decoration on mobile */
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
   .curve-carousel {
     height: 400px;
     margin: 0;
   }
+
   .reviews-cta {
     margin: 0;
     padding: 0 16px 15px;
   }
-  .review-card { width: 260px; padding: 20px; min-height: 250px; }
-  .review-modal { padding: 28px 22px 24px; }
-  .review-modal-title { font-size: 1.5rem; }
-  .review-modal-row { grid-template-columns: 1fr; }
+
+  .review-card {
+    width: 260px;
+    padding: 20px;
+    min-height: 250px;
+  }
+
+  .review-modal {
+    padding: 28px 22px 24px;
+  }
+
+  .review-modal-title {
+    font-size: 1.5rem;
+  }
+
+  .review-modal-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 400px) {
-  .testimonials { padding: 15px 0 5px; }        /* 🔥 aur tight */
-  .curve-carousel { height: 380px; }
-  .review-card { width: 230px; padding: 18px; min-height: 230px; }
-  .review-text { font-size: 0.82rem; }
-  .review-quote { font-size: 3rem; }
-}
+  .testimonials {
+    padding: 15px 0 5px;
 
+    /* Keep some of the side decoration visible */
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+  .curve-carousel {
+    height: 380px;
+  }
+
+  .review-card {
+    width: 230px;
+    padding: 18px;
+    min-height: 230px;
+  }
+
+  .review-text {
+    font-size: 0.82rem;
+  }
+
+  .review-quote {
+    font-size: 3rem;
+  }
+}
 /* =========================================
    🔥 SUCCESS POPUP
    ========================================= */
