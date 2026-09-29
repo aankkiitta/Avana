@@ -1,5 +1,5 @@
 import React from 'react';
-import './Meaningful.css';
+import './meaningful.css';
 
 const Meaningful = () => {
   return (
