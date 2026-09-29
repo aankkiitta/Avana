@@ -17,7 +17,7 @@
   --cream-dark: #e4dfd6;
   --page-bg: #f5f3ef;
   --text-main: #444;
-  --text-light: #777;
+  --text-light: #666;
   --text-cream: rgba(245, 243, 239, 0.72);
 }
 
@@ -79,9 +79,10 @@
   text-align: center;
   max-width: 900px;
   margin: 0 auto 50px auto;
+  position: relative;
+  z-index: 3;
 }
 
-/* 🔥 TITLE — 2 lines, proper size */
 .avana-title {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 2.2rem;
@@ -92,7 +93,6 @@
   letter-spacing: -0.01em;
 }
 
-/* 🔥 Lime background box on "Business" */
 .avana-box {
   background-color: var(--lime);
   color: var(--navy);
@@ -103,24 +103,29 @@
   display: inline-block;
 }
 
+/* ✅ Header text — dark gray, readable */
+.avana-header-text {
+  position: relative;
+  z-index: 3;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
 .avana-header-text p {
   font-size: 1rem;
-  color: var(--text-light);
+  color: var(--text-main);
   margin-bottom: 10px;
   line-height: 1.7;
 }
 
-/* 🔥 Highlight — plain by default (context overrides) */
-.avana-highlight {
-  color: var(--navy);
+/* ✅ Highlight — sirf lime words ke liye */
+.avana-header-text p .avana-highlight {
+  color: var(--lime-readable);
   font-weight: 700;
-  background: none !important;
-  background-color: transparent !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  font-style: normal !important;
-  box-shadow: none !important;
-  display: inline !important;
+  background: none;
+  padding: 0;
+  font-style: normal;
+  display: inline;
 }
 
 /* =========================================
@@ -318,12 +323,8 @@
 }
 
 /* =========================================
-   🔥 HIGHLIGHT COLORS — context aware
+   🔥 HIGHLIGHT — card ke andar
    ========================================= */
-.avana-header .avana-highlight {
-  color: var(--lime-readable) !important;
-}
-
 .avana-service-card:nth-child(1) .avana-highlight,
 .avana-service-card:nth-child(3) .avana-highlight {
   color: var(--lime) !important;
@@ -355,7 +356,6 @@
     min-height: 170px !important;
   }
 
-  /* 🔥 Tablet — background scroll (fixed iOS pe kaam nahi karta) */
   .avana-page {
     background-attachment: scroll !important;
     background-position: center bottom;
@@ -365,7 +365,6 @@
 }
 
 @media (max-width: 768px) {
-  /* 🔥 Mobile — background scroll fix */
   .avana-page {
     background-attachment: scroll !important;
     background-size: cover;
@@ -377,7 +376,6 @@
     overflow: visible;
   }
 
-  /* 🔥 Overlay — mobile pe absolute (not fixed) */
   .avana-page::before {
     position: absolute;
     inset: 0;

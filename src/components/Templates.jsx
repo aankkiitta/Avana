@@ -4,110 +4,146 @@ import "./Templates.css";
 const allTemplates = [
   {
     id: 1,
-    title: "NOVA",
-    subtitle: "Universal Portfolio",
-    desc: "Clean, Minimal, Professional",
+    title: "RealPress - Estate Sale and Rental WordPress Theme",
+    author: "by ThimPress in Real Estate",
     category: "Portfolio",
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
     price: 249,
+    previewUrl: "/ankita.html",      // ✅ ADD THIS
     pages: ["Home", "About", "Projects", "Contact"],
-    features: ["Fully responsive", "Clean code", "Easy to customize", "SEO friendly", "Fast loading", "Free updates"],
+    features: [
+      "Advanced Search Filters for Real Estate Site",
+      "Highly Customizable Elementor Widgets",
+      "Property management system",
+    ],
     tech: ["HTML5", "CSS3", "JavaScript", "Responsive"],
   },
   {
     id: 2,
-    title: "ORBIT",
-    subtitle: "SaaS Landing Page",
-    desc: "Modern, Bold, Conversion-ready",
+    title: "Orbit - SaaS Landing Page Template",
+    author: "by Avana in Business",
     category: "Business",
     image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
     price: 499,
+    previewUrl: "/previews/orbit.html",          // ✅ ADD THIS
     pages: ["Home", "Features", "Pricing", "Contact"],
-    features: ["Fully responsive", "Clean code", "Easy to customize", "SEO friendly", "Fast loading", "Free updates"],
+    features: [
+      "Conversion-focused hero sections",
+      "Fully responsive across devices",
+      "Modern typography & layouts",
+    ],
     tech: ["HTML5", "CSS3", "JavaScript", "Responsive"],
   },
   {
     id: 3,
-    title: "PULSE",
-    subtitle: "E-commerce Store",
-    desc: "Fast, Clean, Mobile-first",
+    title: "Pulse - E-commerce Store Theme",
+    author: "by Avana in E-commerce",
     category: "Ecommerce",
     image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
     price: 699,
+    previewUrl: "/previews/pulse.html",          // ✅ ADD THIS
     pages: ["Home", "Shop", "Cart", "Checkout"],
-    features: ["Fully responsive", "Clean code", "Easy to customize", "SEO friendly", "Fast loading", "Free updates"],
+    features: [
+      "Optimized product pages",
+      "Fast mobile-first experience",
+      "Easy cart & checkout flow",
+    ],
     tech: ["HTML5", "CSS3", "JavaScript", "Responsive"],
   },
   {
     id: 4,
-    title: "AURA",
-    subtitle: "Creative Agency",
-    desc: "Bold, Artistic, Unique",
+    title: "Aura - Creative Agency Template",
+    author: "by Avana in Portfolio",
     category: "Portfolio",
     image: "https://images.unsplash.com/photo-1499346030926-9a72daac6c63?w=800&q=80",
     price: 349,
+    previewUrl: "/previews/aura.html",           // ✅ ADD THIS
     pages: ["Home", "Work", "Services", "Contact"],
-    features: ["Fully responsive", "Clean code", "Easy to customize", "SEO friendly", "Fast loading", "Free updates"],
+    features: [
+      "Bold, artistic design language",
+      "Case study layouts included",
+      "Smooth scroll animations",
+    ],
     tech: ["HTML5", "CSS3", "JavaScript", "Responsive"],
   },
   {
     id: 5,
-    title: "VERTEX",
-    subtitle: "Startup Landing",
-    desc: "Sharp, Modern, Fast",
+    title: "Vertex - Startup Landing Template",
+    author: "by Avana in Business",
     category: "Business",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
     price: 449,
+    previewUrl: "/previews/vertex.html",         // ✅ ADD THIS
     pages: ["Home", "Features", "Pricing", "Blog", "Contact"],
-    features: ["Fully responsive", "Clean code", "Easy to customize", "SEO friendly", "Fast loading", "Free updates"],
+    features: [
+      "Sharp, modern startup look",
+      "Blog & pricing layouts",
+      "Lightning-fast performance",
+    ],
     tech: ["HTML5", "CSS3", "JavaScript", "Responsive"],
   },
   {
     id: 6,
-    title: "BLOOM",
-    subtitle: "E-commerce Boutique",
-    desc: "Elegant, Feminine, Clean",
+    title: "Bloom - Boutique Store Template",
+    author: "by Avana in E-commerce",
     category: "Ecommerce",
     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
     price: 799,
+    previewUrl: "/previews/bloom.html",          // ✅ ADD THIS
     pages: ["Home", "Shop", "Product", "Cart", "Checkout"],
-    features: ["Fully responsive", "Clean code", "Easy to customize", "SEO friendly", "Fast loading", "Free updates"],
+    features: [
+      "Elegant product showcases",
+      "Feminine, refined typography",
+      "Customizable collections",
+    ],
     tech: ["HTML5", "CSS3", "JavaScript", "Responsive"],
   },
   {
     id: 7,
-    title: "STELLAR",
-    subtitle: "Photography Portfolio",
-    desc: "Minimal, Visual, Sharp",
+    title: "Stellar - Photography Portfolio Theme",
+    author: "by Avana in Portfolio",
     category: "Portfolio",
     image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
     price: 299,
+    previewUrl: "/previews/stellar.html",        // ✅ ADD THIS
     pages: ["Home", "Gallery", "About", "Contact"],
-    features: ["Fully responsive", "Clean code", "Easy to customize", "SEO friendly", "Fast loading", "Free updates"],
+    features: [
+      "Full-screen gallery layouts",
+      "Minimal, visual-first design",
+      "Fast image loading",
+    ],
     tech: ["HTML5", "CSS3", "JavaScript", "Responsive"],
   },
   {
     id: 8,
-    title: "FLUX",
-    subtitle: "SaaS Dashboard",
-    desc: "Data-driven, Clean, Modern",
+    title: "Flux - SaaS Dashboard Template",
+    author: "by Avana in Business",
     category: "Business",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
     price: 599,
+    previewUrl: "/previews/flux.html",           // ✅ ADD THIS
     pages: ["Dashboard", "Analytics", "Settings", "Profile"],
-    features: ["Fully responsive", "Clean code", "Easy to customize", "SEO friendly", "Fast loading", "Free updates"],
+    features: [
+      "Data-rich dashboard widgets",
+      "Clean modern UI components",
+      "Responsive admin layouts",
+    ],
     tech: ["HTML5", "CSS3", "JavaScript", "Responsive"],
   },
   {
     id: 9,
-    title: "CARTLY",
-    subtitle: "E-commerce Fashion",
-    desc: "Trendy, Bold, Mobile-first",
+    title: "Cartly - Fashion Store Template",
+    author: "by Avana in E-commerce",
     category: "Ecommerce",
     image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80",
     price: 899,
+    previewUrl: "/previews/cartly.html",         // ✅ ADD THIS
     pages: ["Home", "Shop", "Product", "Cart", "Checkout"],
-    features: ["Fully responsive", "Clean code", "Easy to customize", "SEO friendly", "Fast loading", "Free updates"],
+    features: [
+      "Trendy fashion layouts",
+      "Bold product photography grids",
+      "Mobile-first checkout",
+    ],
     tech: ["HTML5", "CSS3", "JavaScript", "Responsive"],
   },
 ];
@@ -116,17 +152,21 @@ const ITEMS_PER_PAGE = 3;
 
 const Templates = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedTemplate, setSelectedTemplate] = useState(null);
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+
+  /* ✅ Open preview HTML in new tab */
+  const openPreview = (url) => {
+    if (!url) return;
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
 
   const filteredTemplates = allTemplates.filter(
     (tpl) =>
       tpl.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      tpl.subtitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      tpl.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
       tpl.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Search change hone par reset
   useEffect(() => {
     setVisibleCount(ITEMS_PER_PAGE);
   }, [searchTerm]);
@@ -134,21 +174,10 @@ const Templates = () => {
   const visibleTemplates = filteredTemplates.slice(0, visibleCount);
   const hasMore = visibleCount < filteredTemplates.length;
 
-  // Lock body scroll when modal open
-  useEffect(() => {
-    if (selectedTemplate) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [selectedTemplate]);
-
   return (
-    <section className="tpl-section" id="templates" >
+    <section className="tpl-section" id="templates">
       <div className="tpl-inner">
+
         {/* HEADER */}
         <div className="tpl-header">
           <h2 className="tpl-heading">
@@ -188,51 +217,51 @@ const Templates = () => {
           {visibleTemplates.length > 0 ? (
             visibleTemplates.map((tpl) => (
               <div className="tpl-card" key={tpl.id}>
+
+                {/* IMAGE with hover overlay */}
                 <div className="tpl-image-wrap">
                   <img src={tpl.image} alt={tpl.title} />
 
-                  {/* 🔥 PRICE — top-left */}
-                  <span className="tpl-price-badge">₹{tpl.price}</span>
+                  <div className="tpl-image-overlay">
+                    <h3 className="tpl-hover-title">{tpl.category}</h3>
+                    <span className="tpl-hover-line" />
 
-                  {/* 🔥 CATEGORY — top-right */}
-                  <span className="tpl-badge">{tpl.category}</span>
-
-                  <div className="tpl-image-overlay" />
-                </div>
-
-                <div className="tpl-content">
-                  <h3 className="tpl-name">{tpl.title}</h3>
-                  <p className="tpl-subtitle">{tpl.subtitle}</p>
-                  <p className="tpl-desc">{tpl.desc}</p>
-
-                  <div className="tpl-btn-row">
-                    <button className="tpl-btn tpl-btn-preview">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                        <circle cx="12" cy="12" r="3" />
-                      </svg>
+                    {/* ✅ Hover preview button */}
+                    <button
+                      className="tpl-view-site-btn"
+                      type="button"
+                      onClick={() => openPreview(tpl.previewUrl)}
+                    >
                       Live Preview
                     </button>
+                  </div>
+                </div>
+
+                {/* CARD BODY */}
+                <div className="tpl-content">
+                  <h3 className="tpl-card-title">{tpl.title}</h3>
+                  <p className="tpl-card-author">{tpl.author}</p>
+
+                  {/* Feature list */}
+                  <ul className="tpl-card-features">
+                    {tpl.features.map((feat, i) => (
+                      <li key={i}>{feat}</li>
+                    ))}
+                  </ul>
+
+                  {/* Price + Live Preview button */}
+                  <div className="tpl-card-bottom">
+                    <span className="tpl-card-price">${tpl.price}</span>
+
+                    {/* ✅ Bottom preview button */}
                     <button
-                      className="tpl-btn tpl-btn-details"
-                      onClick={() => setSelectedTemplate(tpl)}
+                      className="tpl-card-live-btn"
+                      type="button"
+                      onClick={() => openPreview(tpl.previewUrl)}
                     >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M12 16v-4" />
-                        <path d="M12 8h.01" />
-                      </svg>
-                      View Details
+                      Live Preview
                     </button>
                   </div>
-
-                  <button className="tpl-btn-make">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                    </svg>
-                    Make It Yours
-                  </button>
                 </div>
               </div>
             ))
@@ -241,7 +270,7 @@ const Templates = () => {
           )}
         </div>
 
-        {/* 🔥 LOAD MORE */}
+        {/* LOAD MORE */}
         {hasMore && (
           <div className="tpl-load-more-wrap">
             <button
@@ -257,72 +286,6 @@ const Templates = () => {
           </div>
         )}
       </div>
-
-      {/* MODAL */}
-      {selectedTemplate && (
-        <div className="tpl-modal-overlay" onClick={() => setSelectedTemplate(null)}>
-          <div className="tpl-modal" onClick={(e) => e.stopPropagation()}>
-            <button className="tpl-modal-close" onClick={() => setSelectedTemplate(null)}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 6 6 18" />
-                <path d="m6 6 12 12" />
-              </svg>
-            </button>
-
-            <div className="tpl-modal-scroll">
-              <div className="tpl-modal-image">
-                <img src={selectedTemplate.image} alt={selectedTemplate.title} />
-              </div>
-
-              <div className="tpl-modal-body">
-                <h3 className="tpl-modal-title">{selectedTemplate.title}</h3>
-                <p className="tpl-modal-subtitle">{selectedTemplate.subtitle}</p>
-                <p className="tpl-modal-desc">{selectedTemplate.desc}</p>
-
-                <div className="tpl-modal-price-box">
-                  <span className="tpl-modal-price-label">PRICE</span>
-                  <span className="tpl-modal-price-value">₹{selectedTemplate.price}</span>
-                </div>
-
-                <div className="tpl-modal-section">
-                  <h4 className="tpl-modal-section-title">📄 Pages Included</h4>
-                  <div className="tpl-modal-tags">
-                    {selectedTemplate.pages.map((page, i) => (
-                      <span key={i} className="tpl-modal-tag">✓ {page}</span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="tpl-modal-section">
-                  <h4 className="tpl-modal-section-title">⭐ Features</h4>
-                  <div className="tpl-modal-features">
-                    {selectedTemplate.features.map((feat, i) => (
-                      <span key={i} className="tpl-modal-feature">✓ {feat}</span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="tpl-modal-section">
-                  <h4 className="tpl-modal-section-title">{"</>"} Built With</h4>
-                  <div className="tpl-modal-tech">
-                    {selectedTemplate.tech.map((t, i) => (
-                      <span key={i} className="tpl-modal-tech-item">{t}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="tpl-modal-footer">
-              <div className="tpl-modal-actions">
-                <button className="tpl-modal-btn tpl-modal-btn-preview">Live Preview</button>
-                <button className="tpl-modal-btn tpl-modal-btn-download">Download</button>
-              </div>
-              <button className="tpl-modal-btn-make">Make It Yours</button>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

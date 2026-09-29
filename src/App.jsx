@@ -10,7 +10,7 @@ import VisionMissionGoals from "./components/VisionMissionGoals";
 import AboutUs from "./components/AboutUs";
 import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
-import Meaningful from "./components/meaningful";
+import Meaningful from "./components/Meaningful";
 import Stats from "./components/Stats";
 import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";

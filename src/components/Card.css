@@ -1,0 +1,218 @@
+/* =========================================
+   CARD
+   ========================================= */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  border-color: #0f172a;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.1);
+}
+
+/* =========================================
+   IMAGE
+   ========================================= */
+.card-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;          /* 🔥 top focus — full site preview */
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-image-wrap img {
+  transform: scale(1.03);
+}
+
+/* =========================================
+   HOVER OVERLAY — with View Site button
+   ========================================= */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-view-site {
+  padding: 12px 28px;
+  background: #ffffff;
+  color: #0f172a;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  transform: translateY(8px);
+  opacity: 0;
+}
+
+.card:hover .card-view-site {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.05s;
+}
+
+.card-view-site:hover {
+  background: #0f172a;
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* =========================================
+   CATEGORY BADGE
+   ========================================= */
+.card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(15, 23, 42, 0.85);
+  color: #ffffff;
+  backdrop-filter: blur(6px);
+  z-index: 2;
+}
+
+/* =========================================
+   CARD BODY
+   ========================================= */
+.card-body {
+  padding: 18px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.card-subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #64748b;
+  margin: 0 0 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   PRICE + MAKE IT YOURS
+   ========================================= */
+.card-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.card-price {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.card-make-btn {
+  padding: 9px 16px;
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.card-make-btn:hover {
+  background: #3b82f6;
+}
+
+/* =========================================
+   VIEW DETAILS — full width niche
+   ========================================= */
+.card-details-btn {
+  width: 100%;
+  padding: 11px;
+  margin-top: 10px;
+  background: transparent;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card-details-btn:hover {
+  border-color: #0f172a;
+  background: #f8fafc;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 400px) {
+  .card-price-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .card-make-btn {
+    width: 100%;
+  }
+}
