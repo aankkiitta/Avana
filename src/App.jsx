@@ -23,11 +23,12 @@ function App() {
       <New />
   
       <OurWork />
-      <Templates />
+     
       <Pricing />
       <VisionMissionGoals />
       <AboutUs />
       <Testimonials />
+       <Templates />
       <FAQ />
       <Meaningful />
       <Stats />

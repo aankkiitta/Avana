@@ -17,6 +17,9 @@
   --tpl-text-light: #6b7280;
   --tpl-border: #e5e7eb;
   --tpl-overlay: rgba(0, 100, 200, 0.85);
+  --tpl-wsp-green: #25D366;
+  --tpl-wsp-green-dark: #1ebe5b;
+  --tpl-preview-blue: #1a73b8;
 }
 
 /* =========================================
@@ -107,7 +110,8 @@
 .tpl-search-icon {
   flex-shrink: 0;
   color: #9ca3af;
-  margin-right: 10px;
+  margin-right: 12px;
+  font-size: 0.95rem;
 }
 
 .tpl-search input {
@@ -140,6 +144,7 @@
   justify-content: center;
   cursor: pointer;
   transition: background 0.2s ease;
+  font-size: 0.9rem;
 }
 
 .tpl-search-filter:hover {
@@ -167,7 +172,7 @@
 }
 
 /* =========================================
-   CARD — Envato style
+   CARD
    ========================================= */
 .tpl-card {
   background: var(--tpl-card-bg);
@@ -258,6 +263,9 @@
 }
 
 .tpl-view-site-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 9px 22px;
   background: #ffffff;
   color: #0f172a;
@@ -273,6 +281,10 @@
   transition: all 0.25s ease 0.25s;
 }
 
+.tpl-view-site-btn i {
+  font-size: 0.8rem;
+}
+
 .tpl-card:hover .tpl-view-site-btn {
   transform: translateY(0);
   opacity: 1;
@@ -285,7 +297,7 @@
 }
 
 /* =========================================
-   CARD BODY — Envato style
+   CARD BODY
    ========================================= */
 .tpl-content {
   padding: 16px 18px 18px;
@@ -341,43 +353,96 @@
   font-weight: 700;
 }
 
-/* Price + Live Preview row */
+/* Bottom buttons row */
 .tpl-card-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
   padding-top: 14px;
   border-top: 1px solid var(--tpl-border);
   margin-top: auto;
 }
 
-.tpl-card-price {
+/* =========================================
+   ✅ "Make It Yours" Button — Filled Green
+   ========================================= */
+.tpl-card-wsp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--tpl-wsp-green);
+  color: #ffffff;
+  border: 1.5px solid var(--tpl-wsp-green);
+  border-radius: 6px;
   font-family: 'Inter', sans-serif;
-  font-size: 1.5rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  color: var(--tpl-navy);
-  letter-spacing: -0.02em;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  white-space: nowrap;
+  flex: 1;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25);
+}
+
+.tpl-card-wsp-btn i {
+  font-size: 0.95rem;
   line-height: 1;
 }
 
+.tpl-card-wsp-btn:hover {
+  background: var(--tpl-wsp-green-dark);
+  border-color: var(--tpl-wsp-green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+}
+
+.tpl-card-wsp-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(37, 211, 102, 0.3);
+}
+
+/* =========================================
+   Live Preview Button — Outline Blue
+   ========================================= */
 .tpl-card-live-btn {
-  padding: 9px 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
   background: transparent;
-  color: #1a73b8;
-  border: 1.5px solid #1a73b8;
-  border-radius: 4px;
+  color: var(--tpl-preview-blue);
+  border: 1.5px solid var(--tpl-preview-blue);
+  border-radius: 6px;
   font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
+  letter-spacing: 0.2px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
   white-space: nowrap;
+  flex: 1;
+  text-align: center;
+}
+
+.tpl-card-live-btn i {
+  font-size: 0.78rem;
+  line-height: 1;
 }
 
 .tpl-card-live-btn:hover {
-  background: #1a73b8;
+  background: var(--tpl-preview-blue);
   color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(26, 115, 184, 0.3);
+}
+
+.tpl-card-live-btn:active {
+  transform: translateY(0);
 }
 
 /* =========================================
@@ -409,11 +474,12 @@
   background: var(--tpl-navy-soft);
 }
 
-.tpl-load-more svg {
+.tpl-load-more i {
   transition: transform 0.2s ease;
+  font-size: 0.8rem;
 }
 
-.tpl-load-more:hover svg {
+.tpl-load-more:hover i {
   transform: translateY(3px);
 }
 
@@ -432,7 +498,17 @@
 
   .tpl-hover-title { font-size: 1.2rem; }
   .tpl-card-title { font-size: 0.95rem; }
-  .tpl-card-price { font-size: 1.35rem; }
+
+  .tpl-card-bottom {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tpl-card-wsp-btn,
+  .tpl-card-live-btn {
+    width: 100%;
+    padding: 11px 16px;
+  }
 
   .tpl-load-more { padding: 11px 24px; font-size: 0.85rem; }
 }
@@ -440,9 +516,10 @@
 @media (max-width: 400px) {
   .tpl-card-bottom {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 10px;
   }
+  .tpl-card-wsp-btn,
   .tpl-card-live-btn {
     width: 100%;
   }

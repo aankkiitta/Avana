@@ -1,6 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import './OurWork.css';
 
+/* ✅ Import local images */
+import imgRealEstate from '../image/realestate.jpg';
+import imgPhotography from '../image/fusionproduct.jpg';
+import imgRestaurant from '../image/mehfil-e-khaas.jpg';
+import imgBusiness from '../image/sudharshaninfra.jpg';
+
 const OurWork = () => {
   const sectionRef = useRef(null);
 
@@ -28,44 +34,46 @@ const OurWork = () => {
   const projects = [
     {
       number: '01',
-      title: 'Business Website',
+      title: 'Real Estate Website',
       description:
-        'Professional and responsive websites for businesses, shops and services to build a strong online presence.',
-      image:
-        'https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=800&q=80',
-      link: 'https://example.com/project-1',
+        'Modern and responsive real estate website for Thakarshi Lifespaces to showcase residential projects, ongoing developments, completed projects and property offerings.',
+      image: imgRealEstate, // ✅ Local image
+      link: 'https://thakarshilifespaces.com/',
     },
     {
       number: '02',
-      title: 'E-Commerce Website',
+      title: 'Photography Website',
       description:
-        'Online stores with product pages, shopping cart and a simple experience for your customers.',
-      image:
-        'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&q=80',
-      link: 'https://example.com/project-2',
+        'A visually engaging photography platform crafted to showcase stunning portfolios, professional photoshoots, creative services and unforgettable moments.',
+      image: imgPhotography, // ✅ Local image
+      link: 'https://fusionstoryproduction.com/',
     },
     {
       number: '03',
-      title: 'Web Application',
+      title: 'Restaurant Website',
       description:
-        'Custom web applications built according to your idea, business needs and required features.',
-      image:
-        'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
-      link: 'https://example.com/project-3',
+        'A complete restaurant experience with an interactive menu, events, gallery, customer reviews and an easy-to-use table reservation system designed to turn visitors into bookings.',
+      image: imgRestaurant, // ✅ Local image
+      link: 'https://restaurant-gules-sigma-23.vercel.app/',
     },
     {
       number: '04',
-      title: 'Portfolio Website',
+      title: 'Business Website',
       description:
-        'Clean and modern portfolio websites to showcase your work, skills, projects and personal brand.',
-      image:
-        'https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?w=800&q=80',
-      link: 'https://example.com/project-4',
+        'A modern and responsive website for Sudarshan Infra, designed to showcase its services, projects, company information and professional presence online.',
+      image: imgBusiness, // ✅ Local image
+      link: 'https://sudharshan-infra.onrender.com/',
     },
   ];
 
+  /* ✅ Open the project in a new tab */
+  const openProject = (url) => {
+    if (!url) return;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
-  <section className="work" id="work" ref={sectionRef}>
+    <section className="work" id="work" ref={sectionRef}>
 
       <div className="work-header">
 
@@ -109,7 +117,20 @@ const OurWork = () => {
 
         {projects.map((project, index) => (
 
-          <div className="work-card" key={index}>
+          <div
+            className="work-card"
+            key={index}
+            onClick={() => openProject(project.link)}
+            role="link"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openProject(project.link);
+              }
+            }}
+            aria-label={`Open ${project.title} live project`}
+          >
 
             <img
               src={project.image}
@@ -137,6 +158,7 @@ const OurWork = () => {
                   {project.description}
                 </p>
 
+                {/* ✅ Always visible now */}
                 <a
                   href={project.link}
                   target="_blank"

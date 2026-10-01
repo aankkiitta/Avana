@@ -8,8 +8,7 @@ const allTemplates = [
     author: "by ThimPress in Real Estate",
     category: "Portfolio",
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
-    price: 249,
-    previewUrl: "/ankita.html",      // ✅ ADD THIS
+    previewUrl: "/ankita.html",
     pages: ["Home", "About", "Projects", "Contact"],
     features: [
       "Advanced Search Filters for Real Estate Site",
@@ -24,8 +23,7 @@ const allTemplates = [
     author: "by Avana in Business",
     category: "Business",
     image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80",
-    price: 499,
-    previewUrl: "/previews/orbit.html",          // ✅ ADD THIS
+    previewUrl: "/previews/orbit.html",
     pages: ["Home", "Features", "Pricing", "Contact"],
     features: [
       "Conversion-focused hero sections",
@@ -40,8 +38,7 @@ const allTemplates = [
     author: "by Avana in E-commerce",
     category: "Ecommerce",
     image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
-    price: 699,
-    previewUrl: "/previews/pulse.html",          // ✅ ADD THIS
+    previewUrl: "/previews/pulse.html",
     pages: ["Home", "Shop", "Cart", "Checkout"],
     features: [
       "Optimized product pages",
@@ -56,8 +53,7 @@ const allTemplates = [
     author: "by Avana in Portfolio",
     category: "Portfolio",
     image: "https://images.unsplash.com/photo-1499346030926-9a72daac6c63?w=800&q=80",
-    price: 349,
-    previewUrl: "/previews/aura.html",           // ✅ ADD THIS
+    previewUrl: "/previews/aura.html",
     pages: ["Home", "Work", "Services", "Contact"],
     features: [
       "Bold, artistic design language",
@@ -72,8 +68,7 @@ const allTemplates = [
     author: "by Avana in Business",
     category: "Business",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
-    price: 449,
-    previewUrl: "/previews/vertex.html",         // ✅ ADD THIS
+    previewUrl: "/previews/vertex.html",
     pages: ["Home", "Features", "Pricing", "Blog", "Contact"],
     features: [
       "Sharp, modern startup look",
@@ -88,8 +83,7 @@ const allTemplates = [
     author: "by Avana in E-commerce",
     category: "Ecommerce",
     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
-    price: 799,
-    previewUrl: "/previews/bloom.html",          // ✅ ADD THIS
+    previewUrl: "/previews/bloom.html",
     pages: ["Home", "Shop", "Product", "Cart", "Checkout"],
     features: [
       "Elegant product showcases",
@@ -104,8 +98,7 @@ const allTemplates = [
     author: "by Avana in Portfolio",
     category: "Portfolio",
     image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-    price: 299,
-    previewUrl: "/previews/stellar.html",        // ✅ ADD THIS
+    previewUrl: "/previews/stellar.html",
     pages: ["Home", "Gallery", "About", "Contact"],
     features: [
       "Full-screen gallery layouts",
@@ -120,8 +113,7 @@ const allTemplates = [
     author: "by Avana in Business",
     category: "Business",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    price: 599,
-    previewUrl: "/previews/flux.html",           // ✅ ADD THIS
+    previewUrl: "/previews/flux.html",
     pages: ["Dashboard", "Analytics", "Settings", "Profile"],
     features: [
       "Data-rich dashboard widgets",
@@ -136,8 +128,7 @@ const allTemplates = [
     author: "by Avana in E-commerce",
     category: "Ecommerce",
     image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80",
-    price: 899,
-    previewUrl: "/previews/cartly.html",         // ✅ ADD THIS
+    previewUrl: "/previews/cartly.html",
     pages: ["Home", "Shop", "Product", "Cart", "Checkout"],
     features: [
       "Trendy fashion layouts",
@@ -154,10 +145,21 @@ const Templates = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
 
-  /* ✅ Open preview HTML in new tab */
   const openPreview = (url) => {
     if (!url) return;
     window.open(url, "_blank", "noopener,noreferrer");
+  };
+
+  /* ✅ Connect on WhatsApp with custom message */
+  const connectWhatsApp = (templateTitle) => {
+    const phoneNumber = "919892775834"; // 🔴 REPLACE THIS with your number
+
+    const message = `Hi Avana 👋 I'm interested in the "${templateTitle}" template. I really like the design and would love to make it mine. Please share the template details, customization options, and purchase process.`;
+
+    window.open(
+      `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
   };
 
   const filteredTemplates = allTemplates.filter(
@@ -191,10 +193,7 @@ const Templates = () => {
         {/* SEARCH */}
         <div className="tpl-search-wrap">
           <div className="tpl-search">
-            <svg className="tpl-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="11" cy="11" r="7" />
-              <path d="m20 20-3.5-3.5" />
-            </svg>
+            <i className="fa-solid fa-magnifying-glass tpl-search-icon" aria-hidden="true"></i>
             <input
               type="text"
               placeholder="Search templates..."
@@ -202,12 +201,7 @@ const Templates = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
             <button className="tpl-search-filter" aria-label="Filter">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="8" cy="8" r="2.2" />
-                <circle cx="16" cy="16" r="2.2" />
-                <path d="M11 8h9" />
-                <path d="M4 16h9" />
-              </svg>
+              <i className="fa-solid fa-sliders" aria-hidden="true"></i>
             </button>
           </div>
         </div>
@@ -226,12 +220,12 @@ const Templates = () => {
                     <h3 className="tpl-hover-title">{tpl.category}</h3>
                     <span className="tpl-hover-line" />
 
-                    {/* ✅ Hover preview button */}
                     <button
                       className="tpl-view-site-btn"
                       type="button"
                       onClick={() => openPreview(tpl.previewUrl)}
                     >
+                      <i className="fa-solid fa-eye" aria-hidden="true"></i>
                       Live Preview
                     </button>
                   </div>
@@ -249,17 +243,25 @@ const Templates = () => {
                     ))}
                   </ul>
 
-                  {/* Price + Live Preview button */}
+                  {/* Make It Yours + Live Preview buttons */}
                   <div className="tpl-card-bottom">
-                    <span className="tpl-card-price">${tpl.price}</span>
+                    <button
+                      className="tpl-card-wsp-btn"
+                      type="button"
+                      onClick={() => connectWhatsApp(tpl.title)}
+                      aria-label={`Make ${tpl.title} yours`}
+                    >
+                      <i className="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+                      <span>Make It Yours</span>
+                    </button>
 
-                    {/* ✅ Bottom preview button */}
                     <button
                       className="tpl-card-live-btn"
                       type="button"
                       onClick={() => openPreview(tpl.previewUrl)}
                     >
-                      Live Preview
+                      <i className="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                      <span>Live Preview</span>
                     </button>
                   </div>
                 </div>
@@ -278,10 +280,7 @@ const Templates = () => {
               onClick={() => setVisibleCount((c) => c + ITEMS_PER_PAGE)}
             >
               Load More Templates
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 5v14" />
-                <path d="m19 12-7 7-7-7" />
-              </svg>
+              <i className="fa-solid fa-chevron-down" aria-hidden="true"></i>
             </button>
           </div>
         )}

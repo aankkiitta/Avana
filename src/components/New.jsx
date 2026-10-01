@@ -41,7 +41,7 @@ const services = [
 
 export default function New() {
   return (
-    <div className="avana-page">
+    <div className="avana-page" id="services">
       <div className="avana-container">
         {/* ================= HEADER ================= */}
         <header className="avana-header">

@@ -43,8 +43,15 @@ const Header = () => {
   ];
 
   // 🔥 WhatsApp Link with full pre-filled message
-  const whatsappLink = "https://wa.me/33612345678?text=Hi%20Avana%20%F0%9F%91%8B%20I%20came%20across%20your%20work%20and%20would%20love%20to%20know%20more%20about%20your%20services.";
+// WhatsApp Message
+const whatsappMessage =
+  "Hi Avana 👋 I came across your work and would love to know more about your services.";
 
+// WhatsApp Link
+const whatsappLink =
+  `https://api.whatsapp.com/send?phone=919892775834&text=${encodeURIComponent(
+    whatsappMessage
+  )}`;
   return (
     <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
       <div className="header-inner">

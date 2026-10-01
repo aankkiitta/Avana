@@ -95,7 +95,7 @@
 }
 
 /* =========================================
-   ✨ STACKED REVEAL CARDS
+   STACKED REVEAL CARDS
    ========================================= */
 .work-cards {
   display: flex;
@@ -114,9 +114,15 @@
   overflow: hidden;
   cursor: pointer;
   background-color: #1c2b4a;
-  transition: flex 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: flex 0.8s cubic-bezier(0.65, 0, 0.35, 1),
+              box-shadow 0.4s ease;
   will-change: flex;
   isolation: isolate;
+  outline: none;
+}
+
+.work-card:focus-visible {
+  box-shadow: 0 0 0 3px #d4ed4a;
 }
 
 /* Siblings shrink on hover */
@@ -268,7 +274,7 @@
 }
 
 /* =========================================
-   🔥 VIEW LIVE PROJECT LINK
+   🔥 VIEW LIVE PROJECT LINK — ALWAYS VISIBLE
    ========================================= */
 .work-card-live {
   display: inline-flex;
@@ -284,12 +290,10 @@
   padding: 8px 0;
   align-self: flex-start;
   position: relative;
-  opacity: 0;
-  transform: translateY(8px);
-  pointer-events: none;
-  transition: opacity 0.5s ease 0.25s,
-              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.25s,
-              gap 0.3s ease,
+  opacity: 1;               /* ✅ always visible */
+  transform: none;          /* ✅ no hidden state */
+  pointer-events: auto;     /* ✅ always clickable */
+  transition: gap 0.3s ease,
               color 0.3s ease;
   z-index: 4;
 }
@@ -327,20 +331,6 @@
 
 .work-card-live svg {
   transition: transform 0.3s ease;
-}
-
-/* Hover pe link reveal */
-.work-card:hover .work-card-live {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-/* Siblings pe bhi half-visible */
-.work-cards:hover .work-card:not(:hover) .work-card-live {
-  opacity: 0.7;
-  transform: translateY(0);
-  pointer-events: auto;
 }
 
 .work-card-live:hover {
@@ -488,17 +478,9 @@
     border-radius: 100px;
   }
 
-  /* 🔥 Live link always visible on mobile */
   .work-card-live {
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
     font-size: 11px;
     padding: 6px 0;
-  }
-
-  .work-cards:hover .work-card:not(:hover) .work-card-live {
-    opacity: 1;
   }
 }
 

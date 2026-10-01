@@ -5,8 +5,7 @@ const PLANS = [
   {
     id: 'standard',
     name: 'Standard Plan*',
-    oldPrice: '₹8,499/-',
-    price: '₹7,999',
+    tagline: 'ESSENTIAL WEB PRESENCE',
     features: [
       '5 pages Website',
       '1 Year Free Domain Name (.com .in .org)',
@@ -19,7 +18,6 @@ const PLANS = [
       '5 Free Email Id',
       'SEO Friendly Website',
       '100% Responsive Website',
-      '100% Responsive Website',
       '1 Year Free Technical Support For Website',
     ],
     note: 'Suitable for website owners and web masters who manage single website.',
@@ -27,8 +25,7 @@ const PLANS = [
   {
     id: 'premium',
     name: 'Premium Plan*',
-    oldPrice: '₹15,999/-',
-    price: '₹14,999',
+    tagline: 'PROFESSIONAL WEB SOLUTION',
     features: [
       '10 pages Website',
       '1 Year Free Domain Name (.com .in .org)',
@@ -43,7 +40,6 @@ const PLANS = [
       '5 Free Email Id',
       'SEO Friendly Website',
       '100% Responsive Website',
-      '100% Responsive Website',
       '1 Year Free Technical Support For Website',
     ],
     note: 'Suitable for website owners and web masters who manage single website.',
@@ -51,8 +47,7 @@ const PLANS = [
   {
     id: 'ecommerce',
     name: 'E-Commerce Plan*',
-    oldPrice: '₹21,499/-',
-    price: '₹19,999',
+    tagline: 'COMPLETE ONLINE STORE',
     features: [
       '30 pages Website',
       'Ecommerce Features',
@@ -69,7 +64,6 @@ const PLANS = [
       '5 Free Email Id',
       'SEO Friendly Website',
       '100% Responsive Website',
-      '100% Responsive Website',
       '1 Year Free Technical Support For Website',
     ],
     note: 'Suitable for website owners and web masters who manage single website.',
@@ -82,12 +76,8 @@ const PlanCard = ({ plan }) => (
       <h3 className="plan-name">{plan.name}</h3>
     </div>
 
-    <div className="plan-price-bar">
-      <div className="plan-price">
-        <span className="old">{plan.oldPrice}</span>
-        <span className="amount">{plan.price}</span>
-        <span className="slash">/</span>
-      </div>
+    <div className="plan-tagline-bar">
+      <span className="plan-tagline">{plan.tagline}</span>
     </div>
 
     <div className="plan-features">
@@ -114,11 +104,8 @@ const PlanCard = ({ plan }) => (
 );
 
 const Pricing = () => (
-  <section className="pricing-section" id="pricing" >
+  <section className="pricing-section" id="pricing">
     <div className="pricing-head">
-
-     
-
       <h2 className="pricing-title">
         Plans &amp; <span className="highlight-box">Pricing</span>
       </h2>
@@ -131,7 +118,6 @@ const Pricing = () => (
       <p className="pricing-desc">
         <strong>Affordable. Creative. Built for your vision.</strong>
       </p>
-
     </div>
 
     <div className="plans-grid">

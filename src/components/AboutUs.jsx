@@ -57,7 +57,7 @@ const AboutUs = () => {
             <strong>AVANA</strong> is a freelance web design and development
             studio focused on creating modern, responsive, and customized
             digital solutions for businesses, startups, and individuals. We
-            believe a website should not just look good — it should represent
+            believe a website should not just look good it should represent
             your brand, connect with your audience, and support your goals.
           </p>
         </div>
@@ -84,7 +84,7 @@ const AboutUs = () => {
             <p className="offer-text">
               <strong>AVANA</strong> offers a range of online solutions, such
               as website design &amp; development, digital marketing, and Web
-              app development — realizing that the needs of every business
+              app development realizing that the needs of every business
               are distinct and varied. Our goal is to offer our consumers
               high-quality services. We ensure that our customers obtain the
               greatest services possible.
