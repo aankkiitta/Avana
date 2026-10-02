@@ -15,7 +15,7 @@ import Stats from "./components/Stats";
 import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
 import FloatingButton from "./components/FloatingButton";
-
+import About from "./components/About";
 function App() {
   return (
     <Layout>
@@ -26,7 +26,7 @@ function App() {
      
       <Pricing />
       <VisionMissionGoals />
-      <AboutUs />
+     <About />
       <Testimonials />
        <Templates />
       <FAQ />

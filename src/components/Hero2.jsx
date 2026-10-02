@@ -1,6 +1,5 @@
 import React from 'react';
 import './Hero.css';
-import bgImg from '../image/hero.jpg'; // 👈 apni image ka path yaha daalo
 
 const Hero = () => {
   const handleMagneticMove = (e) => {
@@ -16,10 +15,7 @@ const Hero = () => {
   };
 
   return (
-    <section
-      className="hero"
-      style={{ backgroundImage: `url(${bgImg})` }}
-    >
+    <section className="hero">
       <div className="hero-inner">
 
         <h1 className="hero-heading">
