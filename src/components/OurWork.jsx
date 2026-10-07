@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './OurWork.css';
 
-/* ✅ Import local images */
+/* ✅ Import optimized local images */
 import imgRealEstate from '../image/realestate.webp';
 import imgPhotography from '../image/fusionproduct.webp';
 import imgRestaurant from '../image/mehfil-e-khaas.webp';
