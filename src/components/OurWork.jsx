@@ -131,12 +131,13 @@ const OurWork = () => {
             }}
             aria-label={`Open ${project.title} live project`}
           >
-
-            <img
-              src={project.image}
-              alt={project.title}
-              className="work-card-bg"
-            />
+<img
+  src={project.image}
+  alt={project.title}
+  className="work-card-bg"
+  loading="lazy"
+  decoding="async"
+/>
 
             <div className="work-card-overlay"></div>
 
