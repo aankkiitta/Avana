@@ -58,7 +58,13 @@ const whatsappLink =
 
         {/* Logo */}
         <a href="/" className="logo-container" onClick={closeMenu}>
-          <img src={logoImg} alt="Avana" className="logo-image" />
+        <img
+  src={logoImg}
+  alt="Avana"
+  className="logo-image"
+  fetchPriority="high"
+  decoding="async"
+/>
         </a>
 
         {/* Desktop Nav */}
@@ -99,7 +105,13 @@ const whatsappLink =
       <div className={`mobile-menu ${isMenuOpen ? 'mobile-menu--open' : ''}`}>
         <div className="mobile-menu-top">
           <a href="/" className="mobile-menu-logo" onClick={closeMenu}>
-            <img src={logoImg} alt="Avana" className="mobile-logo-image" />
+           <img
+  src={logoImg}
+  alt="Avana"
+  className="mobile-logo-image"
+  fetchPriority="high"
+  decoding="async"
+/>
           </a>
 
           <button className="mobile-menu-close" onClick={closeMenu} aria-label="Close menu">

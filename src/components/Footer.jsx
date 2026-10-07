@@ -55,11 +55,12 @@ const Footer = () => {
       link: 'https://www.linkedin.com/in/aman-tiwari-561217358/',
       icon: faLinkedinIn,
     },
-    {
-      name: 'WhatsApp',
-      link: 'https://wa.me/33612345678',
-      icon: faWhatsapp,
-    },
+{
+  name: 'WhatsApp',
+  link: 'https://wa.me/919892775834?text=Hi%20avanaaa%20%F0%9F%91%8B%20I%20came%20across%20your%20work%20and%20would%20love%20to%20know%20more%20about%20your%20services.',
+  icon: faWhatsapp,
+},
+
   ];
 
   return (
