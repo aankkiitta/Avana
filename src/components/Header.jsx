@@ -3,7 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import './Header.css';
-import logoImg from '../image/logo.png';
+
+// 🔥 STEP 1: Convert your logo.png to logo.webp and save it in your image folder.
+// Update the import to point to the new, optimized webp file.
+import logoImg from '../image/logo.webp'; 
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,30 +46,36 @@ const Header = () => {
   ];
 
   // 🔥 WhatsApp Link with full pre-filled message
-// WhatsApp Message
-const whatsappMessage =
-  "Hi Avana 👋 I came across your work and would love to know more about your services.";
+  const whatsappMessage =
+    "Hi Avana 👋 I came across your work and would love to know more about your services.";
 
-// WhatsApp Link
-const whatsappLink =
-  `https://api.whatsapp.com/send?phone=919892775834&text=${encodeURIComponent(
-    whatsappMessage
-  )}`;
+  const whatsappLink =
+    `https://api.whatsapp.com/send?phone=919892775834&text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+
   return (
     <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
       <div className="header-inner">
 
         {/* Logo */}
         <a href="/" className="logo-container" onClick={closeMenu}>
-<img
-  src={logoImg}
-  alt="Avana"
-  className="logo-image"
-  width="236"
-  height="105"
-  fetchPriority="high"
-  decoding="async"
-/>
+          {/* 
+            🔥 STEP 2: Added srcSet and sizes.
+            Even if you only have one file, this tells the browser exactly how to render it.
+            If you generate a 2x version later (e.g., logo@2x.webp), add it to srcSet.
+          */}
+          <img
+            src={logoImg}
+            srcSet={`${logoImg} 1x`} 
+            sizes="236px"
+            alt="Avana"
+            className="logo-image"
+            width="236"
+            height="105"
+            fetchPriority="high"
+            decoding="async"
+          />
         </a>
 
         {/* Desktop Nav */}
@@ -107,15 +116,17 @@ const whatsappLink =
       <div className={`mobile-menu ${isMenuOpen ? 'mobile-menu--open' : ''}`}>
         <div className="mobile-menu-top">
           <a href="/" className="mobile-menu-logo" onClick={closeMenu}>
-{/* Mobile Logo */}
-<img
-  src={logoImg}
-  alt="Avana"
-  className="mobile-logo-image"
-  width="236"
-  height="105"
-  decoding="async"
-/>
+            {/* Mobile Logo - optimized attributes added */}
+            <img
+              src={logoImg}
+              srcSet={`${logoImg} 1x`}
+              sizes="236px"
+              alt="Avana"
+              className="mobile-logo-image"
+              width="236"
+              height="105"
+              decoding="async"
+            />
           </a>
 
           <button className="mobile-menu-close" onClick={closeMenu} aria-label="Close menu">
@@ -140,7 +151,7 @@ const whatsappLink =
           ))}
         </nav>
 
-        {/* 🔥 Mobile Actions — Same link */}
+        {/* 🔥 Mobile Actions */}
         <div className="mobile-actions">
           <a
             href={whatsappLink}
