@@ -58,10 +58,12 @@ const whatsappLink =
 
         {/* Logo */}
         <a href="/" className="logo-container" onClick={closeMenu}>
-        <img
+<img
   src={logoImg}
   alt="Avana"
   className="logo-image"
+  width="236"
+  height="105"
   fetchPriority="high"
   decoding="async"
 />
@@ -105,11 +107,13 @@ const whatsappLink =
       <div className={`mobile-menu ${isMenuOpen ? 'mobile-menu--open' : ''}`}>
         <div className="mobile-menu-top">
           <a href="/" className="mobile-menu-logo" onClick={closeMenu}>
-           <img
+{/* Mobile Logo */}
+<img
   src={logoImg}
   alt="Avana"
   className="mobile-logo-image"
-  fetchPriority="high"
+  width="236"
+  height="105"
   decoding="async"
 />
           </a>
