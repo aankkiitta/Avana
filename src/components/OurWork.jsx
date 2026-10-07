@@ -2,10 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import './OurWork.css';
 
 /* ✅ Import local images */
-import imgRealEstate from '../image/realestate.jpg';
-import imgPhotography from '../image/fusionproduct.jpg';
-import imgRestaurant from '../image/mehfil-e-khaas.jpg';
-import imgBusiness from '../image/sudharshaninfra.jpg';
+import imgRealEstate from '../image/realestate.webp';
+import imgPhotography from '../image/fusionproduct.webp';
+import imgRestaurant from '../image/mehfil-e-khaas.webp';
+import imgBusiness from '../image/sudharshaninfra.webp';
 
 const OurWork = () => {
   const sectionRef = useRef(null);

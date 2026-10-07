@@ -192,7 +192,7 @@ const ContactUs = () => {
               </div>
               <div className="contact-info-text">
                 <h4>Email Us</h4>
-                <p>ankitachauhan135@gmail.com</p>
+                <p></p>
               </div>
             </div>
 
